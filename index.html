@@ -66,7 +66,7 @@
         .banner-text .tagline { font-style: italic; color: var(--blue); font-weight: 600; }
         .banner-illustration { font-size: 60px; color: var(--blue); opacity: 0.9; }
 
-        /* PETA INDONESIA (8 AREA DOKUSIN) */
+        /* PETA INDONESIA (8 AREA SPECIFIC) */
         .map-card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -79,7 +79,7 @@
             position: relative;
             width: 100%;
             height: 480px;
-            background: url('peta-2.png') no-repeat center center;
+            background: url('peta.png') no-repeat center center;
             background-size: contain;
             margin-top: 15px;
             border-radius: 8px;
@@ -347,7 +347,7 @@
 
         <!-- KPI CARDS 4 PROGRAM -->
         <div class="kpi-grid">
-            <!-- KOTAK 1: BNSP -->
+        <!-- KOTAK 1: BNSP (PENAKSIR BERSERTIFIKAT) -->
             <div class="kpi-card">
                 <div class="kpi-header">
                     <span class="kpi-title">Penaksir Bersertifikat BNSP</span>
@@ -358,15 +358,15 @@
                 </div>
                 <div class="kpi-details">
                     <div class="detail-row">
-                        <span class="dot-indicator"><span class="dot dot-green"></span>Sudah Sertifikasi</span>
+                        <span class="dot-indicator"><span class="dot dot-green"></span>BNSP AKTIF</span>
                         <b id="bnsp-selesai">0</b>
                     </div>
                     <div class="detail-row">
-                        <span class="dot-indicator"><span class="dot dot-gold"></span>Proses Sertifikasi</span>
+                        <span class="dot-indicator"><span class="dot dot-gold"></span>BELUM BNSP</span>
                         <b id="bnsp-proses">0</b>
                     </div>
                     <div class="detail-row">
-                        <span class="dot-indicator"><span class="dot dot-red"></span>Belum Sertifikasi</span>
+                        <span class="dot-indicator"><span class="dot dot-red"></span>BNSP TIDAK AKTIF</span>
                         <b id="bnsp-belum">0</b>
                     </div>
                 </div>
@@ -397,7 +397,7 @@
                 </div>
             </div>
 
-            <!-- KOTAK 3: TDP (KONEKSI DATA REAL SPREADSHEET TDP) -->
+            <!-- KOTAK 3: TDP (TALENT DEV) -->
             <div class="kpi-card">
                 <div class="kpi-header">
                     <span class="kpi-title">TDP (Talent Dev)</span>
@@ -408,16 +408,16 @@
                 </div>
                 <div class="kpi-details">
                     <div class="detail-row">
-                        <span class="dot-indicator"><span class="dot dot-green"></span>Selesai Program</span>
-                        <b id="tdp-selesai">0</b>
+                        <span class="dot-indicator"><span class="dot dot-gold"></span>CALON KADER</span>
+                        <b id="tdp-calon">0</b>
                     </div>
                     <div class="detail-row">
-                        <span class="dot-indicator"><span class="dot dot-gold"></span>Proses Program</span>
-                        <b id="tdp-proses">0</b>
+                        <span class="dot-indicator"><span class="dot dot-green"></span>TOTAL KADER</span>
+                        <b id="tdp-kader">0</b>
                     </div>
                     <div class="detail-row">
-                        <span class="dot-indicator"><span class="dot dot-red"></span>Belum / Tertunda</span>
-                        <b id="tdp-belum">0</b>
+                        <span class="dot-indicator"><span class="dot dot-green"></span>SUDAH PROMOSI PJP</span>
+                        <b id="tdp-promosi">0</b>
                     </div>
                 </div>
             </div>
@@ -561,7 +561,7 @@
         // 2. URL WEB APP SPREADSHEET BNSP
         const GOOGLE_SCRIPT_URL_BNSP = 'https://script.google.com/macros/s/AKfycbxK6ZX1KGEo_1lz4ikWK3CzMNkYPKXyxCXhBmyNCWaCIwa9clCZ5HMTUz47g7Q52l5a/exec';
 
-        // 3. ⚠️ PASTE URL WEB APP SPREADSHEET TDP BARU KAMU DI SINI
+        // 3. URL WEB APP SPREADSHEET TDP
         const GOOGLE_SCRIPT_URL_TDP = 'https://script.google.com/macros/s/AKfycbznA1QTH6IEMYfjyRKBkj2d5MYwj5BG9U3wlJswp8hsPGmv49gtLRPpUgiXiYIEYnc/exec';
 
         // 4. URL WEB APP SPREADSHEET SDM WILAYAH (DAGAB)
@@ -634,9 +634,9 @@
                 const tdpData = await response.json();
 
                 document.getElementById('tdp-total').innerText = tdpData.total || 0;
-                document.getElementById('tdp-selesai').innerText = tdpData.selesai || 0;
-                document.getElementById('tdp-proses').innerText = tdpData.proses || 0;
-                document.getElementById('tdp-belum').innerText = tdpData.belum || 0;
+                document.getElementById('tdp-calon').innerText = tdpData.calonKader || 0;
+                document.getElementById('tdp-kader').innerText = tdpData.totalKader || 0;
+                document.getElementById('tdp-promosi').innerText = tdpData.sudahPromosi || 0;
             } catch (e) {
                 console.error("Gagal memuat data TDP:", e);
             }
