@@ -20,7 +20,7 @@
             --text-dark: #333333;
             --text-muted: #6c757d;
             --green: #198754;
-            --orange: #E07A5F;
+            --orange: #FD7E14;
             --red: #DC3545;
             --border-color: #e0e0e0;
         }
@@ -66,7 +66,7 @@
         .banner-text .tagline { font-style: italic; color: var(--blue); font-weight: 600; }
         .banner-illustration { font-size: 60px; color: var(--blue); opacity: 0.9; }
 
-        /* PETA INDONESIA */
+        /* PETA INDONESIA (8 AREA DOKUSIN) */
         .map-card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -78,10 +78,11 @@
         .map-wrapper {
             position: relative;
             width: 100%;
-            height: 450px;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Indonesia_blank_map.svg/800px-Indonesia_blank_map.svg.png') no-repeat center center;
+            height: 480px;
+            background: url('peta.png') no-repeat center center;
             background-size: contain;
             margin-top: 15px;
+            border-radius: 8px;
         }
 
         .map-pin {
@@ -103,7 +104,7 @@
             width: 16px;
             height: 16px;
             background-color: var(--gold);
-            border: 4px solid rgba(242, 159, 5, 0.3);
+            border: 4px solid rgba(242, 159, 5, 0.4);
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
             cursor: pointer;
@@ -162,12 +163,76 @@
         }
         .btn-reset:hover { background-color: #d98d04; }
 
-        /* KPI GRID */
+        /* KPI CARDS STYLING */
         .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 24px; }
-        .kpi-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
-        .kpi-title { font-size: 14px; font-weight: 600; color: var(--navy-blue); margin-bottom: 10px; }
-        .kpi-value { font-size: 32px; font-weight: 700; color: var(--navy-blue); line-height: 1; margin-bottom: 8px; }
-        .kpi-subtext { font-size: 12px; color: var(--text-muted); }
+        
+        .kpi-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+        .kpi-card:hover { transform: translateY(-4px); }
+
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .kpi-title { font-size: 14px; font-weight: 600; color: var(--navy-blue); max-width: 75%; }
+        .kpi-icon {
+            background: rgba(25, 55, 109, 0.08);
+            color: var(--blue);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .kpi-value-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .kpi-value { font-size: 36px; font-weight: 700; color: var(--navy-blue); line-height: 1; }
+
+        .kpi-details {
+            font-size: 13px;
+            color: var(--text-dark);
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+            margin-top: auto;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .detail-row:last-child { margin-bottom: 0; }
+        
+        .dot-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot {
+            height: 9px;
+            width: 9px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-green { background-color: var(--green); }
+        .dot-gold { background-color: var(--gold); }
+        .dot-red { background-color: var(--red); }
 
         /* SUMMARY GRID */
         .summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px; }
@@ -189,13 +254,13 @@
         @media (max-width: 1024px) {
             .kpi-grid { grid-template-columns: repeat(2, 1fr); }
             .chart-grid, .summary-grid { grid-template-columns: 1fr; }
-            .map-wrapper { height: 300px; }
+            .map-wrapper { height: 320px; }
         }
         @media (max-width: 768px) {
             .kpi-grid { grid-template-columns: 1fr; }
             .banner { flex-direction: column; text-align: center; }
             .banner-illustration { display: none; }
-            .map-wrapper { height: 200px; }
+            .map-wrapper { height: 220px; }
         }
     </style>
 </head>
@@ -220,45 +285,41 @@
             </div>
         </div>
 
-        <!-- PETA INDONESIA -->
+        <!-- PETA INDONESIA (8 AREA DIBATASI PRESISI) -->
         <div class="map-card">
-            <div class="chart-title"><i class="fas fa-map-marked-alt" style="color:var(--gold);"></i> Distribusi Total SDM PT Gadai MAS Nusantara (Peta)</div>
+            <div class="chart-title"><i class="fas fa-map-marked-alt" style="color:var(--gold);"></i> Distribusi Total SDM PT Gadai MAS Nusantara</div>
             <div class="map-wrapper">
-                <div class="map-pin" style="top: 35%; left: 22%;">
+                <div class="map-pin" style="top: 28%; left: 22%;">
                     <div class="pin-dot"></div>
-                    <div class="pin-label">Sumatera<b id="map-sumatera">0</b></div>
+                    <div class="pin-label">Sumut<b id="map-sumut">0</b></div>
                 </div>
                 <div class="map-pin" style="top: 68%; left: 34%;">
                     <div class="pin-dot"></div>
-                    <div class="pin-label">Jakarta<b id="map-jakarta">0</b></div>
-                </div>
-                <div class="map-pin" style="top: 76%; left: 36%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Jawa Barat<b id="map-jabar">0</b></div>
-                </div>
-                <div class="map-pin" style="top: 78%; left: 42%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Jawa Tengah<b id="map-jateng">0</b></div>
+                    <div class="pin-label">DKI & HO<b id="map-jakarta">0</b></div>
                 </div>
                 <div class="map-pin" style="top: 80%; left: 48%;">
                     <div class="pin-dot"></div>
-                    <div class="pin-label">Jawa Timur<b id="map-jatim">0</b></div>
+                    <div class="pin-label">Jatim<b id="map-jatim">0</b></div>
                 </div>
-                <div class="map-pin" style="top: 45%; left: 52%;">
+                <div class="map-pin" style="top: 45%; left: 54%;">
                     <div class="pin-dot"></div>
-                    <div class="pin-label">Kalimantan<b id="map-kalimantan">0</b></div>
+                    <div class="pin-label">Kaltim<b id="map-kaltim">0</b></div>
                 </div>
                 <div class="map-pin" style="top: 50%; left: 65%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Sulawesi<b id="map-sulawesi">0</b></div>
                 </div>
-                <div class="map-pin" style="top: 85%; left: 58%;">
+                <div class="map-pin" style="top: 83%; left: 56%;">
                     <div class="pin-dot"></div>
-                    <div class="pin-label">Bali & Nusra<b id="map-bali">0</b></div>
+                    <div class="pin-label">Bali<b id="map-bali">0</b></div>
                 </div>
-                <div class="map-pin" style="top: 60%; left: 82%;">
+                <div class="map-pin" style="top: 85%; left: 60%;">
                     <div class="pin-dot"></div>
-                    <div class="pin-label">Maluku & Papua<b id="map-papua">0</b></div>
+                    <div class="pin-label">NTB<b id="map-ntb">0</b></div>
+                </div>
+                <div class="map-pin" style="top: 86%; left: 65%;">
+                    <div class="pin-dot"></div>
+                    <div class="pin-label">NTT<b id="map-ntt">0</b></div>
                 </div>
             </div>
         </div>
@@ -273,10 +334,10 @@
             <select id="filterArea">
                 <option value="all">Seluruh Indonesia</option>
                 <option value="jakarta">DKI Jakarta</option>
-                <option value="sumut">Sumatera Utama</option>
+                <option value="sumut">Sumatera Utara</option>
                 <option value="jatim">Jawa Timur</option>
                 <option value="kaltim">Kalimantan Timur</option>
-                <option value="sulsel">Sulawesi Selatan</option>
+                <option value="sulawesi">Sulawesi</option>
                 <option value="bali">Bali</option>
                 <option value="ntb">NTB</option>
                 <option value="ntt">NTT</option>
@@ -284,27 +345,106 @@
             <button class="btn-reset" onclick="loadData()"><i class="fas fa-sync-alt"></i> Reset</button>
         </div>
 
-        <!-- KPI CARDS PJP -->
+        <!-- KPI CARDS 4 PROGRAM -->
         <div class="kpi-grid">
-            <div class="kpi-card" style="border-top: 4px solid var(--navy-blue);">
-                <span class="kpi-title">PJP Belum Definitif</span>
-                <span class="kpi-value" id="val-total-pjp">0</span>
-                <span class="kpi-subtext">Karyawan aktif berstatus PJP</span>
+            <!-- KOTAK 1: BNSP (KONEKSI DATA REAL DARI SPREADSHEET BNSP) -->
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Penaksir Bersertifikat BNSP</span>
+                    <div class="kpi-icon"><i class="fas fa-award"></i></div>
+                </div>
+                <div class="kpi-value-container">
+                    <span class="kpi-value" id="bnsp-total">0</span>
+                </div>
+                <div class="kpi-details">
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-green"></span>Sudah Sertifikasi</span>
+                        <b id="bnsp-selesai">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-gold"></span>Proses Sertifikasi</span>
+                        <b id="bnsp-proses">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-red"></span>Belum Sertifikasi</span>
+                        <b id="bnsp-belum">0</b>
+                    </div>
+                </div>
             </div>
-            <div class="kpi-card" style="border-top: 4px solid var(--blue);">
-                <span class="kpi-title">Dalam Masa PJP</span>
-                <span class="kpi-value" id="val-dalam-masa">0</span>
-                <span class="kpi-subtext">Masih dalam masa PJP</span>
+
+            <!-- KOTAK 2: PJP -->
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">PJP (Pejabat Penanggung Jawab)</span>
+                    <div class="kpi-icon"><i class="fas fa-briefcase"></i></div>
+                </div>
+                <div class="kpi-value-container">
+                    <span class="kpi-value" id="pjp-total">0</span>
+                </div>
+                <div class="kpi-details">
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-green"></span>Lulus / Definitif</span>
+                        <b id="pjp-selesai">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-gold"></span>Dalam Masa PJP</span>
+                        <b id="pjp-proses">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-red"></span>Lewat Masa (Review)</span>
+                        <b id="pjp-belum">0</b>
+                    </div>
+                </div>
             </div>
-            <div class="kpi-card" style="border-top: 4px solid var(--orange);">
-                <span class="kpi-title">Lewat Masa PJP</span>
-                <span class="kpi-value" id="val-lewat-masa">0</span>
-                <span class="kpi-subtext">Perlu dilakukan review</span>
+
+            <!-- KOTAK 3: TDP -->
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">TDP (Talent Dev)</span>
+                    <div class="kpi-icon"><i class="fas fa-graduation-cap"></i></div>
+                </div>
+                <div class="kpi-value-container">
+                    <span class="kpi-value" id="tdp-total">0</span>
+                </div>
+                <div class="kpi-details">
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-green"></span>Selesai Program</span>
+                        <b id="tdp-selesai">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-gold"></span>Proses Program</span>
+                        <b id="tdp-proses">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-red"></span>Belum / Tertunda</span>
+                        <b id="tdp-belum">0</b>
+                    </div>
+                </div>
             </div>
-            <div class="kpi-card" style="border-top: 4px solid var(--gold);">
-                <span class="kpi-title">Presentasi / Lulus Asesmen</span>
-                <span class="kpi-value" id="val-proses-akhir">0</span>
-                <span class="kpi-subtext">Menunggu SK / Presentasi Ulang</span>
+
+            <!-- KOTAK 4: GMDP -->
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">GMDP (General Manager Dev)</span>
+                    <div class="kpi-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <div class="kpi-value-container">
+                    <span class="kpi-value" id="gmdp-total">0</span>
+                </div>
+                <div class="kpi-details">
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-green"></span>Selesai Program</span>
+                        <b id="gmdp-selesai">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-gold"></span>Proses Program</span>
+                        <b id="gmdp-proses">0</b>
+                    </div>
+                    <div class="detail-row">
+                        <span class="dot-indicator"><span class="dot dot-red"></span>Belum / Tertunda</span>
+                        <b id="gmdp-belum">0</b>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -415,68 +555,114 @@
         const colors = { navy: '#0B2447', blue: '#19376D', gold: '#F29F05', green: '#198754', orange: '#E07A5F', red: '#DC3545', purple: '#6f42c1' };
         let charts = {};
 
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwuktT77__9zjsBn5m9zU9Ay138vGrlwJQxbS1vdsuI779alGGQQbU7wADK2jptybMC/exec';
+        // 1. URL WEB APP SPREADSHEET PJP
+        const GOOGLE_SCRIPT_URL_PJP = 'https://script.google.com/macros/s/AKfycbwuktT77__9zjsBn5m9zU9Ay138vGrlwJQxbS1vdsuI779alGGQQbU7wADK2jptybMC/exec';
+        
+        // 2. ⚠️ PASTE URL WEB APP SPREADSHEET BNSP (YANG BARU KAMU DEPLOY) DI SINI
+        const GOOGLE_SCRIPT_URL_BNSP = 'https://script.google.com/macros/s/AKfycbxK6ZX1KGEo_1lz4ikWK3CzMNkYPKXyxCXhBmyNCWaCIwa9clCZ5HMTUz47g7Q52l5a/exec';
+
+        // 3. URL WEB APP SPREADSHEET SDM WILAYAH (DAGAB)
+        const GOOGLE_SCRIPT_URL_SDM_WILAYAH = 'https://script.google.com/macros/s/AKfycbySr_PRyDcm6HpRMZL5h9-a7nhlg8h5BZe9lI4vZ5NRWFj0Ths9qbwFW0hL2G576J8/exec';
 
         async function loadData() {
             try {
-                const response = await fetch(GOOGLE_SCRIPT_URL);
-                const data = await response.json();
+                // Fetch Data PJP
+                const responsePjp = await fetch(GOOGLE_SCRIPT_URL_PJP);
+                const dataPjp = await responsePjp.json();
 
-                // 1. KPI Cards
-                document.getElementById('val-total-pjp').innerText = data.totalPjpAktif || 0;
-                document.getElementById('val-dalam-masa').innerText = data.pjpDalamMasa || 0;
-                document.getElementById('val-lewat-masa').innerText = data.pjpLewatMasa || 0;
-                document.getElementById('val-proses-akhir').innerText = (data.pjpPresentasiUlang + data.pjpLulusAsesmen) || 0;
+                if (dataPjp.pjpData) {
+                    document.getElementById('pjp-total').innerText = dataPjp.pjpData.total || 0;
+                    document.getElementById('pjp-selesai').innerText = dataPjp.pjpData.selesai || 0;
+                    document.getElementById('pjp-proses').innerText = dataPjp.pjpData.proses || 0;
+                    document.getElementById('pjp-belum').innerText = dataPjp.pjpData.belum || 0;
+                }
 
-                // 2. Summary & Detail Tables
-                renderTahapTable(data);
-                renderStatusPjpTable(data.statusPjp);
-                renderKelompokJabatanTable(data.kelompokJabatan, data.totalJabatan);
-                renderPerAreaTable(data.perArea, data.totalArea);
-                renderRingkasanStatusTable(data.ringkasanStatus);
-                renderTindakLanjutTable(data.tindakLanjut);
+                // Render Tabel & Grafik PJP
+                renderTahapTable(dataPjp);
+                renderStatusPjpTable(dataPjp.statusPjp);
+                renderKelompokJabatanTable(dataPjp.kelompokJabatan, dataPjp.totalJabatan);
+                renderPerAreaTable(dataPjp.perArea, dataPjp.totalArea);
+                renderRingkasanStatusTable(dataPjp.ringkasanStatus);
+                renderTindakLanjutTable(dataPjp.tindakLanjut);
 
-                // 3. Update Peta dari Data Spreadsheet Per Area
-                updateMapData(data.perArea);
+                renderJabatanChart(dataPjp.kelompokJabatan);
+                renderAkhirMasaChart(dataPjp.akhirMasaPjp);
+                renderAreaChart(dataPjp.perArea);
 
-                // 4. Render Charts
-                renderJabatanChart(data.kelompokJabatan);
-                renderAkhirMasaChart(data.akhirMasaPjp);
-                renderAreaChart(data.perArea);
+                // Fetch Data BNSP dari Spreadsheet
+                if (GOOGLE_SCRIPT_URL_BNSP) {
+                    loadBnspDataFromSpreadsheet();
+                }
+
+                // Fetch Data SDM Wilayah dari Spreadsheet
+                if (GOOGLE_SCRIPT_URL_SDM_WILAYAH) {
+                    loadMapDataFromSpreadsheet();
+                } else {
+                    updateMapDataFallback(dataPjp.perArea);
+                }
 
             } catch (err) {
                 console.error("Gagal memuat data dari Spreadsheet:", err);
             }
         }
 
-        function updateMapData(listArea) {
-            // Pemetaan total PJP dari spreadsheet ke titik lokasi peta
-            let sumatera = 0, jakarta = 0, jabar = 0, jateng = 0, jatim = 0, kalimantan = 0, sulawesi = 0, bali = 0, papua = 0;
+        async function loadBnspDataFromSpreadsheet() {
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL_BNSP);
+                const bnspData = await response.json();
+
+                document.getElementById('bnsp-total').innerText = bnspData.total || 0;
+                document.getElementById('bnsp-selesai').innerText = bnspData.selesai || 0;
+                document.getElementById('bnsp-proses').innerText = bnspData.proses || 0;
+                document.getElementById('bnsp-belum').innerText = bnspData.belum || 0;
+            } catch (e) {
+                console.error("Gagal memuat data BNSP:", e);
+            }
+        }
+
+        async function loadMapDataFromSpreadsheet() {
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL_SDM_WILAYAH);
+                const sdmWilayah = await response.json();
+
+                document.getElementById('map-sumut').innerText = sdmWilayah.sumut || 0;
+                document.getElementById('map-jakarta').innerText = sdmWilayah.jakarta || 0;
+                document.getElementById('map-jatim').innerText = sdmWilayah.jatim || 0;
+                document.getElementById('map-kaltim').innerText = sdmWilayah.kaltim || 0;
+                document.getElementById('map-sulawesi').innerText = sdmWilayah.sulawesi || 0;
+                document.getElementById('map-bali').innerText = sdmWilayah.bali || 0;
+                document.getElementById('map-ntb').innerText = sdmWilayah.ntb || 0;
+                document.getElementById('map-ntt').innerText = sdmWilayah.ntt || 0;
+            } catch (e) {
+                console.error("Gagal memuat data SDM Wilayah:", e);
+            }
+        }
+
+        function updateMapDataFallback(listArea) {
+            let sumut = 0, jakarta = 0, jatim = 0, kaltim = 0, sulawesi = 0, bali = 0, ntb = 0, ntt = 0;
 
             listArea.forEach(item => {
                 let namaArea = (item.area || '').toUpperCase();
                 let tot = parseInt(item.total) || 0;
 
-                if (namaArea.includes('SUMBAGUT') || namaArea.includes('SUMATERA')) sumatera += tot;
+                if (namaArea.includes('SUMUT')) sumut += tot;
                 else if (namaArea.includes('DKI') || namaArea.includes('JAKARTA') || namaArea.includes('HEAD OFFICE')) jakarta += tot;
-                else if (namaArea.includes('JABAR')) jabar += tot;
-                else if (namaArea.includes('JATENG')) jateng += tot;
                 else if (namaArea.includes('JATIM')) jatim += tot;
-                else if (namaArea.includes('KALTIM') || namaArea.includes('KALIMANTAN')) kalimantan += tot;
+                else if (namaArea.includes('KALTIM')) kaltim += tot;
                 else if (namaArea.includes('SULAWESI')) sulawesi += tot;
-                else if (namaArea.includes('BALI') || namaArea.includes('NTB') || namaArea.includes('NTT')) bali += tot;
-                else if (namaArea.includes('PAPUA') || namaArea.includes('MALUKU')) papua += tot;
+                else if (namaArea.includes('BALI')) bali += tot;
+                else if (namaArea.includes('NTB')) ntb += tot;
+                else if (namaArea.includes('NTT')) ntt += tot;
             });
 
-            document.getElementById('map-sumatera').innerText = sumatera;
+            document.getElementById('map-sumut').innerText = sumut;
             document.getElementById('map-jakarta').innerText = jakarta;
-            document.getElementById('map-jabar').innerText = jabar;
-            document.getElementById('map-jateng').innerText = jateng;
             document.getElementById('map-jatim').innerText = jatim;
-            document.getElementById('map-kalimantan').innerText = kalimantan;
+            document.getElementById('map-kaltim').innerText = kaltim;
             document.getElementById('map-sulawesi').innerText = sulawesi;
             document.getElementById('map-bali').innerText = bali;
-            document.getElementById('map-papua').innerText = papua;
+            document.getElementById('map-ntb').innerText = ntb;
+            document.getElementById('map-ntt').innerText = ntt;
         }
 
         function renderTahapTable(d) {
