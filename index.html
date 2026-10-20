@@ -347,7 +347,7 @@
 
         <!-- KPI CARDS 4 PROGRAM -->
         <div class="kpi-grid">
-            <!-- KOTAK 1: BNSP (KONEKSI DATA REAL DARI SPREADSHEET BNSP) -->
+            <!-- KOTAK 1: BNSP -->
             <div class="kpi-card">
                 <div class="kpi-header">
                     <span class="kpi-title">Penaksir Bersertifikat BNSP</span>
@@ -397,7 +397,7 @@
                 </div>
             </div>
 
-            <!-- KOTAK 3: TDP -->
+            <!-- KOTAK 3: TDP (KONEKSI DATA REAL SPREADSHEET TDP) -->
             <div class="kpi-card">
                 <div class="kpi-header">
                     <span class="kpi-title">TDP (Talent Dev)</span>
@@ -558,10 +558,13 @@
         // 1. URL WEB APP SPREADSHEET PJP
         const GOOGLE_SCRIPT_URL_PJP = 'https://script.google.com/macros/s/AKfycbwuktT77__9zjsBn5m9zU9Ay138vGrlwJQxbS1vdsuI779alGGQQbU7wADK2jptybMC/exec';
         
-        // 2. ⚠️ PASTE URL WEB APP SPREADSHEET BNSP (YANG BARU KAMU DEPLOY) DI SINI
+        // 2. URL WEB APP SPREADSHEET BNSP
         const GOOGLE_SCRIPT_URL_BNSP = 'https://script.google.com/macros/s/AKfycbxK6ZX1KGEo_1lz4ikWK3CzMNkYPKXyxCXhBmyNCWaCIwa9clCZ5HMTUz47g7Q52l5a/exec';
 
-        // 3. URL WEB APP SPREADSHEET SDM WILAYAH (DAGAB)
+        // 3. ⚠️ PASTE URL WEB APP SPREADSHEET TDP BARU KAMU DI SINI
+        const GOOGLE_SCRIPT_URL_TDP = 'https://script.google.com/macros/s/AKfycbznA1QTH6IEMYfjyRKBkj2d5MYwj5BG9U3wlJswp8hsPGmv49gtLRPpUgiXiYIEYnc/exec';
+
+        // 4. URL WEB APP SPREADSHEET SDM WILAYAH (DAGAB)
         const GOOGLE_SCRIPT_URL_SDM_WILAYAH = 'https://script.google.com/macros/s/AKfycbySr_PRyDcm6HpRMZL5h9-a7nhlg8h5BZe9lI4vZ5NRWFj0Ths9qbwFW0hL2G576J8/exec';
 
         async function loadData() {
@@ -594,6 +597,11 @@
                     loadBnspDataFromSpreadsheet();
                 }
 
+                // Fetch Data TDP dari Spreadsheet
+                if (GOOGLE_SCRIPT_URL_TDP) {
+                    loadTdpDataFromSpreadsheet();
+                }
+
                 // Fetch Data SDM Wilayah dari Spreadsheet
                 if (GOOGLE_SCRIPT_URL_SDM_WILAYAH) {
                     loadMapDataFromSpreadsheet();
@@ -617,6 +625,20 @@
                 document.getElementById('bnsp-belum').innerText = bnspData.belum || 0;
             } catch (e) {
                 console.error("Gagal memuat data BNSP:", e);
+            }
+        }
+
+        async function loadTdpDataFromSpreadsheet() {
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL_TDP);
+                const tdpData = await response.json();
+
+                document.getElementById('tdp-total').innerText = tdpData.total || 0;
+                document.getElementById('tdp-selesai').innerText = tdpData.selesai || 0;
+                document.getElementById('tdp-proses').innerText = tdpData.proses || 0;
+                document.getElementById('tdp-belum').innerText = tdpData.belum || 0;
+            } catch (e) {
+                console.error("Gagal memuat data TDP:", e);
             }
         }
 
