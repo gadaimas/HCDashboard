@@ -5,23 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HC Dashboard - PT Gadai MAS Nusantara</title>
     
-<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-=======
-    <!-- Memanggil Font Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Memanggil Ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Memanggil Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
-        /* ================= KUMPULAN WARNA ================= */
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
         :root {
             --navy-blue: #0B2447;
             --blue: #19376D;
@@ -32,56 +20,23 @@
             --text-dark: #333333;
             --text-muted: #6c757d;
             --green: #198754;
-<<<<<<< HEAD
             --orange: #E07A5F;
-=======
-            --orange: #FD7E14;
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
             --red: #DC3545;
             --border-color: #e0e0e0;
         }
 
-<<<<<<< HEAD
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--bg-light); color: var(--text-dark); }
 
         .main-content { padding: 30px; width: 100%; max-width: 1400px; margin: 0 auto; }
-=======
-        /* ================= PENGATURAN DASAR ================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            /* Sidebar dihapus, tidak perlu display flex ribet */
-        }
-
-        /* ================= KONTEN UTAMA FULL WIDTH ================= */
-        .main-content {
-            padding: 30px;
-            width: 100%;
-            max-width: 1400px; /* Agar rapi di layar super lebar */
-            margin: 0 auto; /* Posisi di tengah */
-        }
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
 
         .demo-badge {
             background-color: var(--red);
             color: var(--white);
             padding: 6px 18px;
             border-radius: 20px;
-<<<<<<< HEAD
             font-size: 12px;
             font-weight: 700;
-=======
-            font-size: 13px;
-            font-weight: bold;
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
             display: inline-block;
             margin-bottom: 20px;
             animation: pulse 2s infinite;
@@ -93,11 +48,7 @@
             100% { opacity: 1; }
         }
 
-<<<<<<< HEAD
         /* BANNER */
-=======
-        /* ================= BANNER ================= */
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
         .banner {
             background: linear-gradient(135deg, #ffffff 0%, #e6f0fa 100%);
             border-radius: 12px;
@@ -109,7 +60,6 @@
             margin-bottom: 24px;
             border-left: 8px solid var(--navy-blue);
         }
-<<<<<<< HEAD
         .banner-text h1 { color: var(--navy-blue); font-size: 32px; font-weight: 700; margin-bottom: 5px; }
         .banner-text h1 span { color: var(--gold); }
         .banner-text p { color: var(--text-muted); font-size: 14px; margin-bottom: 8px; }
@@ -117,54 +67,6 @@
         .banner-illustration { font-size: 60px; color: var(--blue); opacity: 0.9; }
 
         /* PETA INDONESIA */
-=======
-
-        .banner-text h1 {
-            color: var(--navy-blue);
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .banner-text h1 span { color: var(--gold); }
-        .banner-text p { color: var(--text-muted); font-size: 15px; margin-bottom: 10px; }
-        .banner-text .tagline { font-style: italic; color: var(--blue); font-weight: 600; }
-        .banner-illustration { font-size: 70px; color: var(--blue); opacity: 0.9; }
-
-        /* ================= FILTER ================= */
-        .filter-section {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 24px;
-            align-items: center;
-            background: var(--card-bg);
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-
-        .filter-section select {
-            padding: 10px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .btn-reset {
-            background-color: var(--gold);
-            color: var(--navy-blue);
-            border: none;
-            padding: 10px 25px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn-reset:hover { background-color: #d98d04; }
-
-        /* ================= PETA INDONESIA (FULL WIDTH) ================= */
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
         .map-card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -173,26 +75,10 @@
             margin-bottom: 24px;
         }
 
-<<<<<<< HEAD
         .map-wrapper {
             position: relative;
             width: 100%;
             height: 450px;
-=======
-        .chart-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy-blue);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .map-wrapper {
-            position: relative;
-            width: 100%;
-            height: 450px; /* Lebih besar agar jelas */
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
             background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Indonesia_blank_map.svg/800px-Indonesia_blank_map.svg.png') no-repeat center center;
             background-size: contain;
             margin-top: 15px;
@@ -244,7 +130,6 @@
             margin-top: 2px;
         }
 
-<<<<<<< HEAD
         /* FILTER SECTION */
         .filter-section {
             display: flex;
@@ -305,62 +190,6 @@
             .kpi-grid { grid-template-columns: repeat(2, 1fr); }
             .chart-grid, .summary-grid { grid-template-columns: 1fr; }
             .map-wrapper { height: 300px; }
-=======
-        /* ================= KPI CARDS ================= */
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 24px;
-        }
-
-        .kpi-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-        .kpi-card:hover { transform: translateY(-5px); }
-        .kpi-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .kpi-title { font-size: 15px; font-weight: 600; color: var(--navy-blue); }
-        .kpi-icon { background: rgba(25, 55, 109, 0.1); color: var(--blue); width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .kpi-value-container { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 15px; }
-        .kpi-value { font-size: 36px; font-weight: 700; color: var(--navy-blue); line-height: 1; }
-        .kpi-trend { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
-        .trend-up { color: var(--green); }
-        .kpi-details { font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: auto; }
-        .detail-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
-        .dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
-
-        /* ================= CHARTS GRID ================= */
-        .chart-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 24px;
-        }
-        .chart-card { background: var(--card-bg); border-radius: 12px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-        .chart-container { position: relative; height: 280px; width: 100%; }
-
-        /* ================= TABLE ================= */
-        .table-card { background: var(--card-bg); border-radius: 12px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-bottom: 40px; }
-        .table-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .search-box { padding: 8px 15px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; width: 250px; }
-        table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border-color); }
-        th { background-color: rgba(11, 36, 71, 0.05); color: var(--navy-blue); font-weight: 600; }
-        .status-badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--white); }
-        .bg-red { background-color: var(--red); } .bg-orange { background-color: var(--orange); } .bg-green { background-color: var(--green); }
-
-        /* ================= RESPONSIVE ================= */
-        @media (max-width: 1024px) {
-            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-            .chart-grid { grid-template-columns: 1fr; }
-            .map-wrapper { height: 350px; }
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
         }
         @media (max-width: 768px) {
             .kpi-grid { grid-template-columns: 1fr; }
@@ -372,21 +201,13 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-=======
-    <!-- KONTEN UTAMA (Tanpa Sidebar) -->
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
     <main class="main-content">
         
         <div class="demo-badge">
             <i class="fas fa-exclamation-triangle"></i> MODE DEMO — DATA SIMULASI
         </div>
 
-<<<<<<< HEAD
         <!-- BANNER ATAS -->
-=======
-        <!-- BANNER -->
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
         <div class="banner">
             <div class="banner-text">
                 <p>Selamat Datang di</p>
@@ -399,7 +220,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
         <!-- PETA INDONESIA -->
         <div class="map-card">
             <div class="chart-title"><i class="fas fa-map-marked-alt" style="color:var(--gold);"></i> Distribusi Total SDM PT Gadai MAS Nusantara (Peta)</div>
@@ -439,56 +259,6 @@
                 <div class="map-pin" style="top: 60%; left: 82%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Maluku & Papua<b id="map-papua">0</b></div>
-=======
-        <!-- PETA INDONESIA TEPAT DI BAWAH BANNER -->
-        <div class="map-card">
-            <div class="chart-title"><i class="fas fa-map-marked-alt" style="color:var(--gold); margin-right:10px;"></i> Distribusi Total SDM Selindo (Peta)</div>
-            <div class="map-wrapper">
-                <!-- Titik Sumatera -->
-                <div class="map-pin" style="top: 35%; left: 22%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Sumatera<b id="map-sumatera">184</b></div>
-                </div>
-                <!-- Titik Jakarta -->
-                <div class="map-pin" style="top: 68%; left: 34%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Jakarta<b id="map-jakarta">312</b></div>
-                </div>
-                <!-- Titik Jawa Barat -->
-                <div class="map-pin" style="top: 76%; left: 36%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Jawa Barat<b id="map-jabar">256</b></div>
-                </div>
-                <!-- Titik Jawa Tengah -->
-                <div class="map-pin" style="top: 78%; left: 42%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Jawa Tengah<b id="map-jateng">168</b></div>
-                </div>
-                <!-- Titik Jawa Timur -->
-                <div class="map-pin" style="top: 80%; left: 48%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Jawa Timur<b id="map-jatim">210</b></div>
-                </div>
-                <!-- Titik Kalimantan -->
-                <div class="map-pin" style="top: 45%; left: 52%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Kalimantan<b id="map-kalimantan">72</b></div>
-                </div>
-                <!-- Titik Sulawesi -->
-                <div class="map-pin" style="top: 50%; left: 65%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Sulawesi<b id="map-sulawesi">96</b></div>
-                </div>
-                <!-- Titik Bali & Nusra -->
-                <div class="map-pin" style="top: 85%; left: 58%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Bali & Nusra<b id="map-bali">58</b></div>
-                </div>
-                <!-- Titik Maluku & Papua -->
-                <div class="map-pin" style="top: 60%; left: 82%;">
-                    <div class="pin-dot"></div>
-                    <div class="pin-label">Maluku & Papua<b id="map-papua">70</b></div>
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
                 </div>
             </div>
         </div>
@@ -502,7 +272,6 @@
             </select>
             <select id="filterArea">
                 <option value="all">Seluruh Indonesia</option>
-<<<<<<< HEAD
                 <option value="jakarta">DKI Jakarta</option>
                 <option value="sumut">Sumatera Utama</option>
                 <option value="jatim">Jawa Timur</option>
@@ -636,98 +405,12 @@
                         <tr><th>Hal yang Dicek</th><th style="text-align: center;">Jumlah</th></tr>
                     </thead>
                     <tbody id="tindakLanjutBody"></tbody>
-=======
-                <option value="jakarta">Jakarta</option>
-                <option value="jabar">Jawa Barat</option>
-                <option value="jatim">Jawa Timur</option>
-            </select>
-            <button class="btn-reset" onclick="resetFilters()"><i class="fas fa-sync-alt"></i> Reset</button>
-        </div>
-
-        <!-- KPI CARDS -->
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <div class="kpi-header"><span class="kpi-title">Total SDM Selindo</span><div class="kpi-icon"><i class="fas fa-users"></i></div></div>
-                <div class="kpi-value-container"><span class="kpi-value" id="val-sdm">1.248</span><span class="kpi-trend trend-up"><i class="fas fa-caret-up"></i> 3%</span></div>
-                <div class="kpi-details">
-                    <div class="detail-row"><span><span class="dot" style="background:var(--blue)"></span>Tetap</span> <span id="val-tetap">820</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--gold)"></span>Kontrak</span> <span id="val-kontrak">320</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:#ccc"></span>Lainnya</span> <span id="val-lainnya">108</span></div>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span class="kpi-title">TDP (Talent Dev)</span><div class="kpi-icon"><i class="fas fa-graduation-cap"></i></div></div>
-                <div class="kpi-value-container"><span class="kpi-value" id="val-tdp">86</span><span class="kpi-trend trend-up"><i class="fas fa-caret-up"></i> 12%</span></div>
-                <div class="kpi-details">
-                    <div class="detail-row"><span><span class="dot" style="background:var(--green)"></span>Selesai</span> <span id="val-tdp-selesai">40</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--gold)"></span>Proses</span> <span id="val-tdp-proses">28</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--red)"></span>Tertunda</span> <span id="val-tdp-tunda">18</span></div>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span class="kpi-title">GMDP</span><div class="kpi-icon"><i class="fas fa-chart-line"></i></div></div>
-                <div class="kpi-value-container"><span class="kpi-value" id="val-gmdp">64</span><span class="kpi-trend trend-up"><i class="fas fa-caret-up"></i> 8%</span></div>
-                <div class="kpi-details">
-                    <div class="detail-row"><span><span class="dot" style="background:var(--green)"></span>Selesai</span> <span id="val-gmdp-selesai">28</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--gold)"></span>Proses</span> <span id="val-gmdp-proses">24</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--red)"></span>Tertunda</span> <span id="val-gmdp-tunda">12</span></div>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span class="kpi-title">PJS & PJP</span><div class="kpi-icon"><i class="fas fa-briefcase"></i></div></div>
-                <div class="kpi-value-container"><span class="kpi-value" id="val-pjs">42</span><span class="kpi-trend trend-up"><i class="fas fa-caret-up"></i> 5%</span></div>
-                <div class="kpi-details">
-                    <div class="detail-row"><span><span class="dot" style="background:var(--blue)"></span>PJS Aktif</span> <span id="val-pjs-aktif">22</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--gold)"></span>PJP Aktif</span> <span id="val-pjp-aktif">20</span></div>
-                    <div class="detail-row"><span><span class="dot" style="background:var(--red)"></span>Menunggu</span> <span id="val-pjs-tunda">14</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CHARTS ROW -->
-        <div class="chart-grid">
-            <div class="chart-card">
-                <div class="chart-title">Status Program TDP</div>
-                <div class="chart-container"><canvas id="tdpChart"></canvas></div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-title">Status Program GMDP</div>
-                <div class="chart-container"><canvas id="gmdpChart"></canvas></div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-title">Tren Total SDM Selindo (6 Bulan)</div>
-                <div class="chart-container"><canvas id="trenChart"></canvas></div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-title">Kebutuhan vs Total SDM per Area</div>
-                <div class="chart-container"><canvas id="kebutuhanChart"></canvas></div>
-            </div>
-        </div>
-
-        <!-- TABLE -->
-        <div class="table-card">
-            <div class="table-header-flex">
-                <div class="chart-title" style="border:none; margin:0; padding:0;">Ringkasan Tindak Lanjut HC</div>
-                <input type="text" id="searchInput" class="search-box" placeholder="Cari area atau program..." onkeyup="searchTable()">
-            </div>
-            <div style="overflow-x:auto;">
-                <table id="tindakLanjutTable">
-                    <thead>
-                        <tr><th>Area</th><th>Program</th><th>Prioritas</th><th>Ringkasan Tindak Lanjut</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Jakarta</td><td>Pengisian Jabatan</td><td>Tinggi</td><td>Pemenuhan posisi Manajer Area kosong</td><td><span class="status-badge bg-red">Perlu Tindakan</span></td></tr>
-                        <tr><td>Jawa Barat</td><td>TDP</td><td>Sedang</td><td>Review presentasi akhir peserta batch 4</td><td><span class="status-badge bg-orange">Dalam Proses</span></td></tr>
-                        <tr><td>Sumatera</td><td>GMDP</td><td>Rendah</td><td>Orientasi awal peserta baru</td><td><span class="status-badge bg-green">Sesuai Jadwal</span></td></tr>
-                    </tbody>
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
                 </table>
             </div>
         </div>
 
     </main>
 
-<<<<<<< HEAD
     <script>
         const colors = { navy: '#0B2447', blue: '#19376D', gold: '#F29F05', green: '#198754', orange: '#E07A5F', red: '#DC3545', purple: '#6f42c1' };
         let charts = {};
@@ -931,108 +614,6 @@
         }
 
         window.onload = loadData;
-=======
-    <!-- SCRIPTS -->
-    <script>
-        const colors = { navy: '#0B2447', blue: '#19376D', gold: '#F29F05', green: '#198754', orange: '#FD7E14', red: '#DC3545' };
-        let charts = {};
-
-        const mockData = {
-            okt2026: {
-                sdmTotal: "1.248", sdmTetap: "820", sdmKontrak: "320", sdmLain: "108",
-                tdpTotal: "86", tdpSelesai: 40, tdpProses: 28, tdpTunda: 18,
-                gmdpTotal: "64", gmdpSelesai: 28, gmdpProses: 24, gmdpTunda: 12,
-                distribusi: [312, 256, 168, 210, 184]
-            },
-            sep2026: {
-                sdmTotal: "1.210", sdmTetap: "800", sdmKontrak: "310", sdmLain: "100",
-                tdpTotal: "80", tdpSelesai: 35, tdpProses: 30, tdpTunda: 15,
-                gmdpTotal: "60", gmdpSelesai: 25, gmdpProses: 25, gmdpTunda: 10,
-                distribusi: [300, 250, 160, 200, 180]
-            }
-        };
-
-        function initCharts(dataKey = 'okt2026') {
-            const data = mockData[dataKey];
-
-            if(charts.tdp) charts.tdp.destroy();
-            charts.tdp = new Chart(document.getElementById('tdpChart').getContext('2d'), {
-                type: 'doughnut',
-                data: { labels: ['Selesai', 'Proses', 'Tertunda'], datasets: [{ data: [data.tdpSelesai, data.tdpProses, data.tdpTunda], backgroundColor: [colors.green, colors.gold, colors.red] }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-            });
-
-            if(charts.gmdp) charts.gmdp.destroy();
-            charts.gmdp = new Chart(document.getElementById('gmdpChart').getContext('2d'), {
-                type: 'doughnut',
-                data: { labels: ['Selesai', 'Proses', 'Tertunda'], datasets: [{ data: [data.gmdpSelesai, data.gmdpProses, data.gmdpTunda], backgroundColor: [colors.green, colors.gold, colors.red] }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-            });
-
-            if(charts.tren) charts.tren.destroy();
-            charts.tren = new Chart(document.getElementById('trenChart').getContext('2d'), {
-                type: 'line',
-                data: { labels: ['Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt'], datasets: [{ label: 'Total SDM', data: [1000, 1050, 1100, 1180, 1210, parseInt(data.sdmTotal.replace('.',''))], borderColor: colors.blue, backgroundColor: 'rgba(25, 55, 109, 0.1)', fill: true, tension: 0.3 }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-
-            if(charts.keb) charts.keb.destroy();
-            charts.keb = new Chart(document.getElementById('kebutuhanChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['Jakarta', 'Jabar', 'Jateng', 'Jatim', 'Sumatera', 'Lainnya'],
-                    datasets: [
-                        { label: 'Total SDM', data: [data.distribusi[0], data.distribusi[1], data.distribusi[2], data.distribusi[3], data.distribusi[4], 118], backgroundColor: colors.navy },
-                        { label: 'Kebutuhan', data: [28, 24, 18, 22, 16, 12], backgroundColor: colors.gold }
-                    ]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } } }
-            });
-        }
-
-        function updateKPIs(dataKey) {
-            const data = mockData[dataKey];
-            document.getElementById('val-sdm').innerText = data.sdmTotal;
-            document.getElementById('val-tetap').innerText = data.sdmTetap;
-            document.getElementById('val-kontrak').innerText = data.sdmKontrak;
-            
-            document.getElementById('val-tdp').innerText = data.tdpTotal;
-            document.getElementById('val-tdp-selesai').innerText = data.tdpSelesai;
-            document.getElementById('val-tdp-proses').innerText = data.tdpProses;
-            
-            document.getElementById('val-gmdp').innerText = data.gmdpTotal;
-            document.getElementById('val-gmdp-selesai').innerText = data.gmdpSelesai;
-            
-            document.getElementById('map-jakarta').innerText = data.distribusi[0];
-            document.getElementById('map-jabar').innerText = data.distribusi[1];
-            document.getElementById('map-jateng').innerText = data.distribusi[2];
-            document.getElementById('map-jatim').innerText = data.distribusi[3];
-            document.getElementById('map-sumatera').innerText = data.distribusi[4];
-        }
-
-        document.getElementById('filterPeriode').addEventListener('change', function(e) {
-            updateKPIs(e.target.value); initCharts(e.target.value);
-        });
-
-        function resetFilters() {
-            document.getElementById('filterPeriode').value = 'okt2026';
-            document.getElementById('filterArea').value = 'all';
-            updateKPIs('okt2026'); initCharts('okt2026');
-        }
-
-        function searchTable() {
-            let filter = document.getElementById("searchInput").value.toLowerCase();
-            let tr = document.getElementById("tindakLanjutTable").getElementsByTagName("tr");
-            for (let i = 1; i < tr.length; i++) {
-                let text = tr[i].innerText.toLowerCase();
-                tr[i].style.display = text.includes(filter) ? "" : "none";
-            }
-        }
-
-        window.onload = function() {
-            updateKPIs('okt2026'); initCharts('okt2026');
-        };
->>>>>>> 1ad4e1c36b55ab2c222d548dcb5598eb17365627
     </script>
 </body>
 </html>
