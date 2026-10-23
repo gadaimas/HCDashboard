@@ -757,7 +757,7 @@
         }
 
         function renderStatusKaryawan(dataObj) {
-            const labels = ["Permanen", "Kontrak", "Magang", "PKWT"];
+            const labels = ["Permanen", "Kontrak", "Magang", "Percobaan"];
             const values = labels.map(label => dataObj[label] || 0);
             const bgColors = ['#10B981', '#3B82F6', '#F59E0B', '#8B5CF6']; 
             let totalData = values.reduce((a, b) => a + b, 0);
