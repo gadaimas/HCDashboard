@@ -253,7 +253,7 @@
                         </div>
 
                         <!-- 4. BALI -->
-                        <div class="absolute" style="top: 72%; left: 54%; transform: translateX(-50%);">
+                        <div class="absolute" style="top: 62%; left: 43%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Bali</h5>
                                 <p id="map-bali-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
@@ -264,7 +264,7 @@
                         </div>
 
                         <!-- 5. NTB -->
-                        <div class="absolute" style="top: 72%; left: 62%; transform: translateX(-50%);">
+                        <div class="absolute" style="top: 68%; left: 53%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTB</h5>
                                 <p id="map-ntb-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
@@ -355,8 +355,6 @@
                         </div>
                         <h3 class="font-bold text-slate-800 text-lg">Status Karyawan</h3>
                     </div>
-                    
-                    <!-- Area TABS Dihapus sesuai permintaan -->
 
                     <div class="flex flex-col sm:flex-row items-center justify-between gap-6 flex-1 mt-2">
                         <div class="relative w-44 h-44 flex-shrink-0">
@@ -368,9 +366,8 @@
                         </div>
                         
                         <div class="flex-1 w-full">
-                            <!-- List ini akan di-generate oleh JS agar dinamis dengan Google Sheet -->
                             <ul id="legend-status" class="space-y-4 text-xs overflow-y-auto max-h-44 pr-2">
-                                
+                                <!-- Digenerate JS -->
                             </ul>
                         </div>
                     </div>
@@ -394,24 +391,30 @@
                     </select>
                 </div>
                 
-                <div class="grid grid-cols-4 gap-2 mb-5">
-                    <div class="bg-blue-50 rounded-lg p-2 text-center border border-blue-100/50">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Manpower<br>Request</p>
-                        <p class="text-xl font-extrabold text-brand-lightblue">120</p>
+                <!-- KOTAK REKRUTMEN YANG SUDAH DIBUAT KECIL-KECIL (5 KOLOM KE SAMPING) -->
+                <div class="grid grid-cols-5 gap-1.5 mb-5">
+                    <div class="bg-[#1a1c4b] rounded-lg p-1.5 text-center flex flex-col justify-between border border-[#1a1c4b]/50 shadow-sm">
+                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Total<br>Request</p>
+                        <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-total">549</p>
                     </div>
-                    <div class="bg-orange-50 rounded-lg p-2 text-center border border-orange-100/50">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Sedang<br>Proses</p>
-                        <p class="text-xl font-extrabold text-brand-orange">62</p>
+                    <div class="bg-[#0e5c9a] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
+                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Req<br>HO</p>
+                        <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-req-ho">58</p>
                     </div>
-                    <div class="bg-emerald-50 rounded-lg p-2 text-center border border-emerald-100/50">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Sudah<br>Terisi</p>
-                        <p class="text-xl font-extrabold text-emerald-600">48</p>
+                    <div class="bg-[#0e5c9a] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
+                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Variant<br>HO</p>
+                        <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-var-ho">40</p>
                     </div>
-                    <div class="bg-red-50 rounded-lg p-2 text-center border border-red-100/50">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Posisi Belum<br>Terisi</p>
-                        <p class="text-xl font-extrabold text-red-500">10</p>
+                    <div class="bg-[#f0a616] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
+                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Req<br>Area</p>
+                        <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-req-area">472</p>
+                    </div>
+                    <div class="bg-[#f0a616] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
+                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Variant<br>Area</p>
+                        <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-var-area">17</p>
                     </div>
                 </div>
+                <!-- AKHIR KOTAK REKRUTMEN -->
                 
                 <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Tren Rekrutmen</h4>
                 <div class="h-36 w-full relative">
@@ -611,7 +614,7 @@
 
         let komposisiData = {};
         let myChartKomposisi;
-        let myChartStatus; // Instance untuk chart Status Karyawan
+        let myChartStatus; 
 
         const chartColors = ['#2563EB', '#0F3C7E', '#06B6D4', '#EAB308', '#EA580C', '#10B981', '#8B5CF6', '#F43F5E', '#64748B'];
 
@@ -625,6 +628,15 @@
                     if (data.totalOutlet) document.getElementById('total-outlet-val').innerText = Number(data.totalOutlet).toLocaleString('id-ID');
                     if (data.karyawanBaru) document.getElementById('karyawan-baru-val').innerText = Number(data.karyawanBaru).toLocaleString('id-ID');
                     if (data.karyawanKeluar) document.getElementById('karyawan-keluar-val').innerText = Number(data.karyawanKeluar).toLocaleString('id-ID');
+
+                    // Binding Data Rekrutmen
+                    if (data.rekrutmen) {
+                        document.getElementById('rekrutmen-total').innerText = Number(data.rekrutmen.totalRequest).toLocaleString('id-ID');
+                        document.getElementById('rekrutmen-req-ho').innerText = Number(data.rekrutmen.requestHo).toLocaleString('id-ID');
+                        document.getElementById('rekrutmen-var-ho').innerText = Number(data.rekrutmen.variantHo).toLocaleString('id-ID');
+                        document.getElementById('rekrutmen-req-area').innerText = Number(data.rekrutmen.requestArea).toLocaleString('id-ID');
+                        document.getElementById('rekrutmen-var-area').innerText = Number(data.rekrutmen.variantArea).toLocaleString('id-ID');
+                    }
 
                     // Binding Data Peta Dinamis 8 Area
                     if (data.mapData) {
@@ -672,11 +684,9 @@
             document.getElementById('tab-area').addEventListener('click', () => renderKomposisi('area'));
         });
 
-        // Chart.js Configurations
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.color = '#64748B';
 
-// Fungsi Render Komposisi Karyawan
         function renderKomposisi(type) {
             if (!komposisiData[type]) return;
 
@@ -698,11 +708,10 @@
                 totalData += val;
             });
 
-            // LOGIKA WARNA BARU: Berikan warna khusus jika labelnya Perempuan / Laki-laki
             const dynamicColors = labels.map((label, index) => {
-                if (label === "Perempuan") return "#EC4899"; // Warna Pink
-                if (label === "Laki-laki") return "#3B82F6"; // Warna Biru Terang
-                return chartColors[index % chartColors.length]; // Sisanya pakai warna default
+                if (label === "Perempuan") return "#EC4899"; 
+                if (label === "Laki-laki") return "#3B82F6"; 
+                return chartColors[index % chartColors.length]; 
             });
 
             if (myChartKomposisi) {
@@ -715,11 +724,7 @@
                     type: 'doughnut',
                     data: {
                         labels: labels,
-                        datasets: [{
-                            data: values,
-                            backgroundColor: dynamicColors,
-                            cutout: '72%'
-                        }]
+                        datasets: [{ data: values, backgroundColor: dynamicColors, cutout: '72%' }]
                     },
                     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
                 });
@@ -732,7 +737,7 @@
                 const count = values[index];
                 if(count > 0) {
                     const percentage = totalData > 0 ? ((count / totalData) * 100).toFixed(1).replace('.', ',') : 0;
-                    const color = dynamicColors[index]; // Pakai warna dinamis yang sudah diset
+                    const color = dynamicColors[index]; 
                     
                     legendHTML += `
                         <li class="flex items-center justify-between">
@@ -751,14 +756,10 @@
             document.getElementById('legend-komposisi').innerHTML = legendHTML;
         }
 
-// Fungsi Render Status Karyawan
         function renderStatusKaryawan(dataObj) {
-            const labels = ["Permanen", "Kontrak", "Magang", "Percobaan"];
+            const labels = ["Permanen", "Kontrak", "Magang", "PKWT"];
             const values = labels.map(label => dataObj[label] || 0);
-            
-            // PALET WARNA BARU: Hijau, Biru Terang, Orange, Ungu
             const bgColors = ['#10B981', '#3B82F6', '#F59E0B', '#8B5CF6']; 
-            
             let totalData = values.reduce((a, b) => a + b, 0);
 
             if (myChartStatus) {
@@ -771,11 +772,7 @@
                     type: 'doughnut',
                     data: {
                         labels: labels,
-                        datasets: [{
-                            data: values,
-                            backgroundColor: bgColors,
-                            cutout: '72%'
-                        }]
+                        datasets: [{ data: values, backgroundColor: bgColors, cutout: '72%' }]
                     },
                     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
                 });
@@ -807,7 +804,6 @@
             document.getElementById('legend-status').innerHTML = legendHTML;
         }
 
-        // 3. Chart Rekrutmen
         new Chart(document.getElementById('chartRekrutmen').getContext('2d'), {
             type: 'bar',
             data: {
@@ -820,7 +816,6 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
         });
 
-        // 4. Chart Mutasi
         new Chart(document.getElementById('chartMutasi').getContext('2d'), {
             type: 'bar',
             data: {
@@ -833,7 +828,6 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
         });
 
-        // 5. Chart BNSP
         new Chart(document.getElementById('chartBNSP').getContext('2d'), {
             type: 'bar',
             data: {
