@@ -86,25 +86,17 @@
                 <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
                     <span class="text-xs text-slate-500 mr-2 font-medium">Area</span>
                     <i class="fas fa-map-marker-alt text-brand-blue mr-2 text-sm"></i>
-                    <select class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
-                        <option>Semua Area</option>
-                        <option>Sumatera</option>
-                        <option>DKI</option>
-                        <option>Jawa Timur</option>
-                        <option>Bali</option>
-                        <option>NTB</option>
-                        <option>NTT</option>
-                        <option>Kalimantan</option>
-                        <option>Sulawesi</option>
-                    </select>
-                </div>
-                <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
-                    <span class="text-xs text-slate-500 mr-2 font-medium">Jenis Outlet</span>
-                    <i class="fas fa-store text-brand-blue mr-2 text-sm"></i>
-                    <select class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
-                        <option>Semua Jenis</option>
-                        <option>Kantor Cabang</option>
-                        <option>Kantor Cabang Pembantu</option>
+                    <!-- DITAMBAH: id="filter-area" dan value pada option -->
+                    <select id="filter-area" class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
+                        <option value="Semua Area">Semua Area</option>
+                        <option value="Sumatera">Sumatera</option>
+                        <option value="DKI">DKI</option>
+                        <option value="Jawa Timur">Jawa Timur</option>
+                        <option value="Bali">Bali</option>
+                        <option value="NTB">NTB</option>
+                        <option value="NTT">NTT</option>
+                        <option value="Kalimantan">Kalimantan</option>
+                        <option value="Sulawesi">Sulawesi</option>
                     </select>
                 </div>
             </div>
@@ -182,7 +174,7 @@
                 <div class="relative z-10 w-full">
                     <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Manpower GAP</h3>
                     <div class="flex items-end justify-between">
-                        <span class="text-3xl font-extrabold text-slate-800 leading-none">-35</span>
+                        <span id="manpower-gap-val" class="text-3xl font-extrabold text-slate-800 leading-none">-35</span>
                     </div>
                 </div>
             </div>
@@ -208,15 +200,12 @@
 
                 <!-- Container Peta -->
                 <div class="flex-1 relative bg-[#F4F7FA] rounded-2xl border border-slate-100 overflow-hidden">
-
-                    <!-- Zoom Controls -->
                     <div class="absolute right-6 top-6 flex flex-col bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden z-20">
                         <button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-50"><i class="fas fa-plus text-xs"></i></button>
                         <div class="h-px bg-slate-100 w-full"></div>
                         <button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-50"><i class="fas fa-minus text-xs"></i></button>
                     </div>
 
-                    <!-- Titik & Kotak Peta (8 Area Spasial) -->
                     <div class="relative w-full h-full min-h-[500px] z-10" style="background-image: url('Peta3-.png'); background-size: 135%; background-position: right -100px center; background-repeat: no-repeat;">
                         
                         <!-- 1. SUMATERA -->
@@ -264,7 +253,7 @@
                         </div>
 
                         <!-- 5. NTB -->
-                        <div class="absolute" style="top: 68%; left: 53%; transform: translateX(-50%);">
+                        <div class="absolute" style="top: 68%; left: 52%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTB</h5>
                                 <p id="map-ntb-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
@@ -275,7 +264,7 @@
                         </div>
 
                         <!-- 6. NTT -->
-                        <div class="absolute" style="top: 72%; left: 71%; transform: translateX(-50%);">
+                        <div class="absolute" style="top: 67%; left: 61.5%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTT</h5>
                                 <p id="map-ntt-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
@@ -323,7 +312,6 @@
                         <h3 class="font-bold text-slate-800 text-lg">Komposisi Karyawan</h3>
                     </div>
                     
-                    <!-- Tabs -->
                     <div class="flex bg-slate-100 rounded-lg p-1 mb-6 text-xs font-semibold w-full border border-slate-200 cursor-pointer">
                         <button id="tab-level" class="tab-btn bg-brand-blue text-white py-1.5 px-2 flex-1 rounded shadow-sm text-center">Berdasarkan Level</button>
                         <button id="tab-gender" class="tab-btn text-slate-600 py-1.5 px-2 flex-1 rounded text-center hover:bg-slate-200">Jenis Kelamin</button>
@@ -340,9 +328,7 @@
                         </div>
                         
                         <div class="flex-1 w-full">
-                            <ul id="legend-komposisi" class="space-y-3 text-xs overflow-y-auto max-h-44 pr-2">
-                                <!-- List label digenerate dari JS -->
-                            </ul>
+                            <ul id="legend-komposisi" class="space-y-3 text-xs overflow-y-auto max-h-44 pr-2"></ul>
                         </div>
                     </div>
                 </div>
@@ -366,9 +352,7 @@
                         </div>
                         
                         <div class="flex-1 w-full">
-                            <ul id="legend-status" class="space-y-4 text-xs overflow-y-auto max-h-44 pr-2">
-                                <!-- Digenerate JS -->
-                            </ul>
+                            <ul id="legend-status" class="space-y-4 text-xs overflow-y-auto max-h-44 pr-2"></ul>
                         </div>
                     </div>
                 </div>
@@ -391,7 +375,6 @@
                     </select>
                 </div>
                 
-                <!-- KOTAK REKRUTMEN YANG SUDAH DIBUAT KECIL-KECIL (5 KOLOM KE SAMPING) -->
                 <div class="grid grid-cols-5 gap-1.5 mb-5">
                     <div class="bg-[#1a1c4b] rounded-lg p-1.5 text-center flex flex-col justify-between border border-[#1a1c4b]/50 shadow-sm">
                         <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Total<br>Request</p>
@@ -414,7 +397,6 @@
                         <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-var-area">17</p>
                     </div>
                 </div>
-                <!-- AKHIR KOTAK REKRUTMEN -->
                 
                 <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Tren Rekrutmen</h4>
                 <div class="h-36 w-full relative">
@@ -422,38 +404,46 @@
                 </div>
             </div>
 
-            <!-- Mutasi & Promosi -->
+            <!-- Mutasi & Promosi (INI YANG BERUBAH) -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-full">
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                     <div class="flex items-center gap-2">
                         <i class="fas fa-graduation-cap text-brand-blue bg-blue-50 p-1.5 rounded"></i>
                         <h3 class="font-bold text-slate-800">Mutasi & Promosi</h3>
                     </div>
-                    <select class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
-                        <option>2026</option>
+                    <!-- Dropdown Tahun Dinamis -->
+                    <select id="filter-tahun-mutasi" class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none cursor-pointer">
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
                     </select>
                 </div>
                 
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mb-1">Mutasi</p>
-                        <div class="flex items-end justify-center gap-2">
-                            <span class="text-3xl font-extrabold text-brand-cyan leading-none">35</span>
-                            <div class="text-[10px] text-emerald-500 flex flex-col items-start mb-0.5 font-bold">
-                                <span><i class="fas fa-caret-up"></i> 20%</span>
-                            </div>
-                        </div>
-                        <p class="text-[9px] text-slate-400 mt-1">vs 2025</p>
+                <!-- Layout 5 Kotak EPM -->
+                <div class="grid grid-cols-3 gap-2 mb-2">
+                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Mutasi</p>
+                        <span id="val-mutasi" class="text-xl font-extrabold text-brand-cyan">0</span>
                     </div>
-                    <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mb-1">Promosi</p>
-                        <div class="flex items-end justify-center gap-2">
-                            <span class="text-3xl font-extrabold text-brand-yellow leading-none">28</span>
-                            <div class="text-[10px] text-emerald-500 flex flex-col items-start mb-0.5 font-bold">
-                                <span><i class="fas fa-caret-up"></i> 12%</span>
-                            </div>
-                        </div>
-                        <p class="text-[9px] text-slate-400 mt-1">vs 2025</p>
+                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Promosi</p>
+                        <span id="val-promosi" class="text-xl font-extrabold text-brand-yellow">0</span>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Demosi</p>
+                        <span id="val-demosi" class="text-xl font-extrabold text-red-500">0</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 mb-5">
+                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penyesuaian<br>Nama Jabatan</p>
+                        <span id="val-penyesuaian" class="text-xl font-extrabold text-brand-lightblue">0</span>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penempatan<br>OJT</p>
+                        <span id="val-ojt" class="text-xl font-extrabold text-emerald-500">0</span>
                     </div>
                 </div>
                 
@@ -516,7 +506,6 @@
                 </div>
                 
                 <div class="space-y-6 mt-2">
-                    <!-- PJP -->
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center flex-shrink-0 shadow-md">
                             <i class="fas fa-file-alt text-2xl"></i>
@@ -545,7 +534,6 @@
                         </div>
                     </div>
 
-                    <!-- TDP -->
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 rounded-xl bg-brand-lightblue text-white flex items-center justify-center flex-shrink-0 shadow-md">
                             <i class="fas fa-file-signature text-2xl"></i>
@@ -574,7 +562,6 @@
                         </div>
                     </div>
 
-                    <!-- GMDP -->
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
                             <i class="fas fa-address-card text-2xl"></i>
@@ -610,26 +597,32 @@
 
     <!-- Script Integrasi Data Apps Script & Chart.js -->
     <script>
-        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbySr_PRyDcm6HpRMZL5h9-a7nhlg8h5BZe9lI4vZ5NRWFj0Ths9qbwFW0hL2G576J8/exec";
+        const APPS_SCRIPT_URL_UTAMA = "https://script.google.com/macros/s/AKfycbySr_PRyDcm6HpRMZL5h9-a7nhlg8h5BZe9lI4vZ5NRWFj0Ths9qbwFW0hL2G576J8/exec";
+        
+        // ==========================================
+        // GANTI INI DENGAN URL APPS SCRIPT MUTASI (EPM) YANG BARU
+        // ==========================================
+        const APPS_SCRIPT_URL_MUTASI = "https://script.google.com/macros/s/AKfycbym0MLyz9kRgRDACBzKcUkaNDDA5gzW0RaTE_7eL5Fte4AbGRCaJ88h5nt6hymENu2Q/exec"; 
 
+        let globalDashboardData = null;
+        let globalMutasiData = null; 
         let komposisiData = {};
         let myChartKomposisi;
         let myChartStatus; 
+        let myChartMutasiTrend; 
 
         const chartColors = ['#2563EB', '#0F3C7E', '#06B6D4', '#EAB308', '#EA580C', '#10B981', '#8B5CF6', '#F43F5E', '#64748B'];
 
         async function fetchDashboardData() {
             try {
-                const response = await fetch(APPS_SCRIPT_URL);
-                const data = await response.json();
+                // 1. Fetch Data Utama
+                const responseUtama = await fetch(APPS_SCRIPT_URL_UTAMA);
+                const data = await responseUtama.json();
                 
                 if (data) {
-                    if (data.totalKaryawan) document.getElementById('total-karyawan-val').innerText = Number(data.totalKaryawan).toLocaleString('id-ID');
-                    if (data.totalOutlet) document.getElementById('total-outlet-val').innerText = Number(data.totalOutlet).toLocaleString('id-ID');
-                    if (data.karyawanBaru) document.getElementById('karyawan-baru-val').innerText = Number(data.karyawanBaru).toLocaleString('id-ID');
-                    if (data.karyawanKeluar) document.getElementById('karyawan-keluar-val').innerText = Number(data.karyawanKeluar).toLocaleString('id-ID');
+                    globalDashboardData = data;
+                    updateKPICards("Semua Area");
 
-                    // Binding Data Rekrutmen
                     if (data.rekrutmen) {
                         document.getElementById('rekrutmen-total').innerText = Number(data.rekrutmen.totalRequest).toLocaleString('id-ID');
                         document.getElementById('rekrutmen-req-ho').innerText = Number(data.rekrutmen.requestHo).toLocaleString('id-ID');
@@ -638,17 +631,14 @@
                         document.getElementById('rekrutmen-var-area').innerText = Number(data.rekrutmen.variantArea).toLocaleString('id-ID');
                     }
 
-                    // Binding Data Peta Dinamis 8 Area
                     if (data.mapData) {
                         const m = data.mapData;
-                        
                         const setMap = (areaKey, elPrefix) => {
                             if (m[areaKey]) {
                                 document.getElementById(`map-${elPrefix}-karyawan`).innerText = `${m[areaKey].karyawan.toLocaleString('id-ID')} Karyawan`;
                                 document.getElementById(`map-${elPrefix}-outlet`).innerText = `${m[areaKey].outlet.toLocaleString('id-ID')} Outlet`;
                             }
                         };
-
                         setMap('Sumatera', 'sumatera');
                         setMap('DKI', 'dki');
                         setMap('Jawa Timur', 'jatim');
@@ -659,29 +649,107 @@
                         setMap('Sulawesi', 'sulawesi');
                     }
 
-                    // Menyiapkan data komposisi dinamis
                     if (data.komposisi) {
                         komposisiData = data.komposisi;
                         renderKomposisi('level');
                     }
 
-                    // Menyiapkan data status karyawan dinamis
                     if (data.statusKaryawan) {
                         renderStatusKaryawan(data.statusKaryawan);
                     }
                 }
+
+                // 2. Fetch Data Mutasi EPM
+                if (APPS_SCRIPT_URL_MUTASI !== "https://script.google.com/macros/s/AKfycbym0MLyz9kRgRDACBzKcUkaNDDA5gzW0RaTE_7eL5Fte4AbGRCaJ88h5nt6hymENu2Q/exec") {
+                    const responseMutasi = await fetch(APPS_SCRIPT_URL_MUTASI);
+                    globalMutasiData = await responseMutasi.json();
+                    
+                    const thnTerpilih = document.getElementById("filter-tahun-mutasi").value;
+                    updateDataMutasiEPM(thnTerpilih);
+                }
+                
             } catch (error) {
                 console.error("Gagal mengambil data dari Spreadsheet:", error);
+            }
+        }
+
+        function updateDataMutasiEPM(tahun) {
+            if (!globalMutasiData || !globalMutasiData[tahun]) {
+                document.getElementById('val-mutasi').innerText = 0;
+                document.getElementById('val-promosi').innerText = 0;
+                document.getElementById('val-demosi').innerText = 0;
+                document.getElementById('val-penyesuaian').innerText = 0;
+                document.getElementById('val-ojt').innerText = 0;
+                updateChartMutasi([], []);
+                return;
+            }
+
+            const dataTahun = globalMutasiData[tahun];
+            document.getElementById('val-mutasi').innerText = Number(dataTahun.mutasi.total).toLocaleString('id-ID');
+            document.getElementById('val-promosi').innerText = Number(dataTahun.promosi.total).toLocaleString('id-ID');
+            document.getElementById('val-demosi').innerText = Number(dataTahun.demosi.total).toLocaleString('id-ID');
+            document.getElementById('val-penyesuaian').innerText = Number(dataTahun.penyesuaian.total).toLocaleString('id-ID');
+            document.getElementById('val-ojt').innerText = Number(dataTahun.ojt.total).toLocaleString('id-ID');
+
+            updateChartMutasi(dataTahun.mutasi.tren, dataTahun.promosi.tren);
+        }
+
+        function updateChartMutasi(trenMutasi, trenPromosi) {
+            if (myChartMutasiTrend) {
+                myChartMutasiTrend.data.datasets[0].data = trenMutasi;
+                myChartMutasiTrend.data.datasets[1].data = trenPromosi;
+                myChartMutasiTrend.update();
+            }
+        }
+
+        function updateKPICards(areaSelected) {
+            if (!globalDashboardData) return;
+
+            if (areaSelected === "Semua Area") {
+                document.getElementById('total-karyawan-val').innerText = Number(globalDashboardData.totalKaryawan).toLocaleString('id-ID');
+                document.getElementById('total-outlet-val').innerText = Number(globalDashboardData.totalOutlet).toLocaleString('id-ID');
+                document.getElementById('karyawan-baru-val').innerText = Number(globalDashboardData.karyawanBaru).toLocaleString('id-ID');
+                document.getElementById('karyawan-keluar-val').innerText = Number(globalDashboardData.karyawanKeluar).toLocaleString('id-ID');
+                document.getElementById('manpower-gap-val').innerText = globalDashboardData.manpowerGap || "-35";
+            } else {
+                const mapData = globalDashboardData.mapData[areaSelected];
+                if (mapData) {
+                    document.getElementById('total-karyawan-val').innerText = Number(mapData.karyawan).toLocaleString('id-ID');
+                    document.getElementById('total-outlet-val').innerText = Number(mapData.outlet).toLocaleString('id-ID');
+                    document.getElementById('karyawan-baru-val').innerText = Number(mapData.karyawanBaru || 0).toLocaleString('id-ID');
+                    document.getElementById('karyawan-keluar-val').innerText = Number(mapData.karyawanKeluar || 0).toLocaleString('id-ID');
+                    document.getElementById('manpower-gap-val').innerText = mapData.gap || "0";
+                }
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             fetchDashboardData();
 
-            // Event listener untuk tombol tabs
+            document.getElementById('filter-area').addEventListener('change', function(e) {
+                updateKPICards(e.target.value);
+            });
+
+            document.getElementById('filter-tahun-mutasi').addEventListener('change', function(e) {
+                updateDataMutasiEPM(e.target.value);
+            });
+
             document.getElementById('tab-level').addEventListener('click', () => renderKomposisi('level'));
             document.getElementById('tab-gender').addEventListener('click', () => renderKomposisi('gender'));
             document.getElementById('tab-area').addEventListener('click', () => renderKomposisi('area'));
+            
+            const ctxMutasi = document.getElementById('chartMutasi').getContext('2d');
+            myChartMutasiTrend = new Chart(ctxMutasi, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'],
+                    datasets: [
+                        { label: 'Mutasi', data: [], backgroundColor: '#06B6D4', borderRadius: 3 },
+                        { label: 'Promosi', data: [], backgroundColor: '#EAB308', borderRadius: 3 }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
         });
 
         Chart.defaults.font.family = "'Inter', sans-serif";
@@ -811,18 +879,6 @@
                 datasets: [
                     { type: 'line', label: 'Terisi', data: [40, 45, 42, 48, 50, 47, 52, 55, 53, 58], borderColor: '#EAB308', borderWidth: 2, fill: false },
                     { type: 'bar', label: 'Realisasi', data: [35, 40, 38, 45, 48, 42, 49, 52, 50, 55], backgroundColor: '#0F3C7E', borderRadius: 3 }
-                ]
-            },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-        });
-
-        new Chart(document.getElementById('chartMutasi').getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt'],
-                datasets: [
-                    { label: 'Mutasi', data: [15, 18, 12, 20, 22, 19, 25, 23, 21, 28], backgroundColor: '#06B6D4', borderRadius: 3 },
-                    { label: 'Promosi', data: [8, 10, 5, 12, 15, 9, 14, 18, 16, 20], backgroundColor: '#EAB308', borderRadius: 3 }
                 ]
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
