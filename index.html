@@ -86,7 +86,6 @@
                 <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
                     <span class="text-xs text-slate-500 mr-2 font-medium">Area</span>
                     <i class="fas fa-map-marker-alt text-brand-blue mr-2 text-sm"></i>
-                    <!-- DITAMBAH: id="filter-area" dan value pada option -->
                     <select id="filter-area" class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
                         <option value="Semua Area">Semua Area</option>
                         <option value="Sumatera">Sumatera</option>
@@ -97,6 +96,15 @@
                         <option value="NTT">NTT</option>
                         <option value="Kalimantan">Kalimantan</option>
                         <option value="Sulawesi">Sulawesi</option>
+                    </select>
+                </div>
+                <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
+                    <span class="text-xs text-slate-500 mr-2 font-medium">Jenis Outlet</span>
+                    <i class="fas fa-store text-brand-blue mr-2 text-sm"></i>
+                    <select class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
+                        <option>Semua Jenis</option>
+                        <option>Kantor Cabang</option>
+                        <option>Kantor Cabang Pembantu</option>
                     </select>
                 </div>
             </div>
@@ -142,7 +150,7 @@
                     <i class="fas fa-user-plus"></i>
                 </div>
                 <div class="relative z-10">
-                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Karyawan Baru <span class="normal-case font-normal"></span></h3>
+                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Karyawan Baru</h3>
                     <div class="flex items-end gap-2">
                         <span id="karyawan-baru-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
@@ -157,7 +165,7 @@
                     <i class="fas fa-user-minus"></i>
                 </div>
                 <div class="relative z-10">
-                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Karyawan Keluar <span class="normal-case font-normal"></span></h3>
+                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Karyawan Keluar</h3>
                     <div class="flex items-end gap-2">
                         <span id="karyawan-keluar-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
@@ -208,7 +216,6 @@
 
                     <div class="relative w-full h-full min-h-[500px] z-10" style="background-image: url('Peta3-.png'); background-size: 135%; background-position: right -100px center; background-repeat: no-repeat;">
                         
-                        <!-- 1. SUMATERA -->
                         <div class="absolute" style="top: 12%; left: 8.5%; transform: translateX(-50%);">
                             <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-35 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Sumatera</h5>
@@ -219,7 +226,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#EA580C]"></div></div>
                         </div>
 
-                        <!-- 2. DKI -->
                         <div class="absolute" style="top: 51.5%; left: 26.5%; transform: translateX(-50%);">
                             <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">DKI & Head Office</h5>
@@ -230,7 +236,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#0F3C7E]"></div></div>
                         </div>
 
-                        <!-- 3. JAWA TIMUR -->
                         <div class="absolute" style="top: 56.5%; left: 34%; transform: translateX(-50%);">
                             <div class="bg-transparentshadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Jawa Timur</h5>
@@ -241,7 +246,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#2563EB]"></div></div>
                         </div>
 
-                        <!-- 4. BALI -->
                         <div class="absolute" style="top: 62%; left: 43%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Bali</h5>
@@ -252,7 +256,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#3B82F6]"></div></div>
                         </div>
 
-                        <!-- 5. NTB -->
                         <div class="absolute" style="top: 68%; left: 52%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTB</h5>
@@ -263,7 +266,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#60A5FA]"></div></div>
                         </div>
 
-                        <!-- 6. NTT -->
                         <div class="absolute" style="top: 67%; left: 61.5%; transform: translateX(-50%);">
                             <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTT</h5>
@@ -274,7 +276,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#93C5FD]"></div></div>
                         </div>
 
-                        <!-- 7. KALIMANTAN -->
                         <div class="absolute" style="top: 22.5%; left: 41.5%; transform: translateX(-50%);">
                             <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Kalimantan</h5>
@@ -285,7 +286,6 @@
                             <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#1E40AF]"></div></div>
                         </div>
 
-                        <!-- 8. SULAWESI -->
                         <div class="absolute" style="top: 46%; left: 51.5%; transform: translateX(-50%);">
                             <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Sulawesi</h5>
@@ -404,14 +404,13 @@
                 </div>
             </div>
 
-            <!-- Mutasi & Promosi (INI YANG BERUBAH) -->
+            <!-- Mutasi & Promosi -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-full">
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                     <div class="flex items-center gap-2">
                         <i class="fas fa-graduation-cap text-brand-blue bg-blue-50 p-1.5 rounded"></i>
                         <h3 class="font-bold text-slate-800">Mutasi & Promosi</h3>
                     </div>
-                    <!-- Dropdown Tahun Dinamis -->
                     <select id="filter-tahun-mutasi" class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none cursor-pointer">
                         <option value="2026">2026</option>
                         <option value="2025">2025</option>
@@ -421,7 +420,6 @@
                     </select>
                 </div>
                 
-                <!-- Layout 5 Kotak EPM -->
                 <div class="grid grid-cols-3 gap-2 mb-2">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Mutasi</p>
@@ -436,14 +434,18 @@
                         <span id="val-demosi" class="text-xl font-extrabold text-red-500">0</span>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2 mb-5">
+                <div class="grid grid-cols-3 gap-2 mb-5">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penyesuaian<br>Nama Jabatan</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penyesuaian<br>Jabatan</p>
                         <span id="val-penyesuaian" class="text-xl font-extrabold text-brand-lightblue">0</span>
                     </div>
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penempatan<br>OJT</p>
                         <span id="val-ojt" class="text-xl font-extrabold text-emerald-500">0</span>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Non<br>Job</p>
+                        <span id="val-nonjob" class="text-xl font-extrabold text-slate-600">0</span>
                     </div>
                 </div>
                 
@@ -467,23 +469,20 @@
                 
                 <div class="grid grid-cols-4 gap-2 mb-5">
                     <div class="text-center">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Total<br>Penaksir</p>
-                        <p class="text-xl font-extrabold text-slate-800">512</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">BNSP<br>Aktif</p>
+                        <p class="text-xl font-extrabold text-emerald-600" id="val-bnsp-aktif">0</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Sudah<br>Bersertifikat</p>
-                        <p class="text-xl font-extrabold text-emerald-600">428</p>
-                        <p class="text-[10px] font-bold text-emerald-600 bg-emerald-50 rounded mt-1">83,6%</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">BNSP<br>Tidak Aktif</p>
+                        <p class="text-xl font-extrabold text-brand-orange" id="val-bnsp-tidak-aktif">0</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Dalam<br>Proses</p>
-                        <p class="text-xl font-extrabold text-brand-orange">68</p>
-                        <p class="text-[10px] font-bold text-brand-orange bg-orange-50 rounded mt-1">13,3%</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Belum<br>BNSP</p>
+                        <p class="text-xl font-extrabold text-red-500" id="val-bnsp-belum">0</p>
                     </div>
-                    <div class="text-center">
-                        <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Belum<br>Bersertifikat</p>
-                        <p class="text-xl font-extrabold text-red-500">16</p>
-                        <p class="text-[10px] font-bold text-red-500 bg-red-50 rounded mt-1">3,1%</p>
+                    <div class="text-center border-l border-slate-100">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Total<br>&nbsp;</p>
+                        <p class="text-xl font-extrabold text-slate-800" id="val-bnsp-total">0</p>
                     </div>
                 </div>
                 
@@ -598,24 +597,48 @@
     <!-- Script Integrasi Data Apps Script & Chart.js -->
     <script>
         const APPS_SCRIPT_URL_UTAMA = "https://script.google.com/macros/s/AKfycbySr_PRyDcm6HpRMZL5h9-a7nhlg8h5BZe9lI4vZ5NRWFj0Ths9qbwFW0hL2G576J8/exec";
-        
-        // ==========================================
-        // GANTI INI DENGAN URL APPS SCRIPT MUTASI (EPM) YANG BARU
-        // ==========================================
-        const APPS_SCRIPT_URL_MUTASI = "https://script.google.com/macros/s/AKfycbym0MLyz9kRgRDACBzKcUkaNDDA5gzW0RaTE_7eL5Fte4AbGRCaJ88h5nt6hymENu2Q/exec"; 
+        const APPS_SCRIPT_URL_MUTASI = "https://script.google.com/macros/s/AKfycbym0MLyz9kRgRDACBzKcUkaNDDA5gzW0RaTE_7eL5Fte4AbGRCaJ88h5nt6hymENu2Q/exec";
+        const APPS_SCRIPT_URL_BNSP = "https://script.google.com/macros/s/AKfycbzn56TQkaCNKP7axw1iY6PSBfYOEpybkAF6GHurxRT47GY6Nw43d6bWH9C2GJhMg5ZJ/exec";
 
         let globalDashboardData = null;
         let globalMutasiData = null; 
+        let globalBNSPData = null;
+        
         let komposisiData = {};
         let myChartKomposisi;
         let myChartStatus; 
         let myChartMutasiTrend; 
+        let myChartBNSP; 
 
         const chartColors = ['#2563EB', '#0F3C7E', '#06B6D4', '#EAB308', '#EA580C', '#10B981', '#8B5CF6', '#F43F5E', '#64748B'];
 
         async function fetchDashboardData() {
+            // 1. Fetch Mutasi
             try {
-                // 1. Fetch Data Utama
+                if (APPS_SCRIPT_URL_MUTASI.startsWith("http")) {
+                    const responseMutasi = await fetch(APPS_SCRIPT_URL_MUTASI);
+                    globalMutasiData = await responseMutasi.json();
+                    
+                    const thnTerpilih = document.getElementById("filter-tahun-mutasi").value;
+                    updateDataMutasiEPM(thnTerpilih);
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data Mutasi:", error);
+            }
+
+            // 2. Fetch BNSP
+            try {
+                if (APPS_SCRIPT_URL_BNSP.startsWith("http")) {
+                    const responseBNSP = await fetch(APPS_SCRIPT_URL_BNSP);
+                    globalBNSPData = await responseBNSP.json();
+                    updateDataBNSP(globalBNSPData);
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data BNSP:", error);
+            }
+
+            // 3. Fetch Utama
+            try {
                 const responseUtama = await fetch(APPS_SCRIPT_URL_UTAMA);
                 const data = await responseUtama.json();
                 
@@ -658,18 +681,27 @@
                         renderStatusKaryawan(data.statusKaryawan);
                     }
                 }
-
-                // 2. Fetch Data Mutasi EPM
-                if (APPS_SCRIPT_URL_MUTASI !== "https://script.google.com/macros/s/AKfycbym0MLyz9kRgRDACBzKcUkaNDDA5gzW0RaTE_7eL5Fte4AbGRCaJ88h5nt6hymENu2Q/exec") {
-                    const responseMutasi = await fetch(APPS_SCRIPT_URL_MUTASI);
-                    globalMutasiData = await responseMutasi.json();
-                    
-                    const thnTerpilih = document.getElementById("filter-tahun-mutasi").value;
-                    updateDataMutasiEPM(thnTerpilih);
-                }
-                
             } catch (error) {
-                console.error("Gagal mengambil data dari Spreadsheet:", error);
+                console.error("Gagal mengambil data dari Spreadsheet Utama:", error);
+            }
+        }
+
+        // FUNGSI UPDATE DATA BNSP
+        function updateDataBNSP(data) {
+            if (!data || !data.summary) return;
+            
+            document.getElementById('val-bnsp-aktif').innerText = Number(data.summary.aktif).toLocaleString('id-ID');
+            document.getElementById('val-bnsp-tidak-aktif').innerText = Number(data.summary.tidakAktif).toLocaleString('id-ID');
+            document.getElementById('val-bnsp-belum').innerText = Number(data.summary.belum).toLocaleString('id-ID');
+            document.getElementById('val-bnsp-total').innerText = Number(data.summary.total).toLocaleString('id-ID');
+
+            if (myChartBNSP) {
+                const labels = myChartBNSP.data.labels; 
+                const chartData = labels.map(area => {
+                    return data.areas[area] ? data.areas[area].total : 0;
+                });
+                myChartBNSP.data.datasets[0].data = chartData;
+                myChartBNSP.update();
             }
         }
 
@@ -680,7 +712,8 @@
                 document.getElementById('val-demosi').innerText = 0;
                 document.getElementById('val-penyesuaian').innerText = 0;
                 document.getElementById('val-ojt').innerText = 0;
-                updateChartMutasi([], []);
+                document.getElementById('val-nonjob').innerText = 0;
+                updateChartMutasi([], [], [], [], [], []);
                 return;
             }
 
@@ -690,14 +723,26 @@
             document.getElementById('val-demosi').innerText = Number(dataTahun.demosi.total).toLocaleString('id-ID');
             document.getElementById('val-penyesuaian').innerText = Number(dataTahun.penyesuaian.total).toLocaleString('id-ID');
             document.getElementById('val-ojt').innerText = Number(dataTahun.ojt.total).toLocaleString('id-ID');
+            document.getElementById('val-nonjob').innerText = Number(dataTahun.nonjob.total).toLocaleString('id-ID');
 
-            updateChartMutasi(dataTahun.mutasi.tren, dataTahun.promosi.tren);
+            updateChartMutasi(
+                dataTahun.mutasi.tren, 
+                dataTahun.promosi.tren,
+                dataTahun.demosi.tren,
+                dataTahun.penyesuaian.tren,
+                dataTahun.ojt.tren,
+                dataTahun.nonjob.tren
+            );
         }
 
-        function updateChartMutasi(trenMutasi, trenPromosi) {
+        function updateChartMutasi(tMutasi, tPromosi, tDemosi, tPenyesuaian, tOjt, tNonjob) {
             if (myChartMutasiTrend) {
-                myChartMutasiTrend.data.datasets[0].data = trenMutasi;
-                myChartMutasiTrend.data.datasets[1].data = trenPromosi;
+                myChartMutasiTrend.data.datasets[0].data = tMutasi;
+                myChartMutasiTrend.data.datasets[1].data = tPromosi;
+                myChartMutasiTrend.data.datasets[2].data = tDemosi;
+                myChartMutasiTrend.data.datasets[3].data = tPenyesuaian;
+                myChartMutasiTrend.data.datasets[4].data = tOjt;
+                myChartMutasiTrend.data.datasets[5].data = tNonjob;
                 myChartMutasiTrend.update();
             }
         }
@@ -744,11 +789,44 @@
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'],
                     datasets: [
-                        { label: 'Mutasi', data: [], backgroundColor: '#06B6D4', borderRadius: 3 },
-                        { label: 'Promosi', data: [], backgroundColor: '#EAB308', borderRadius: 3 }
+                        { label: 'Mutasi', data: [], backgroundColor: '#06B6D4', borderRadius: 2 },
+                        { label: 'Promosi', data: [], backgroundColor: '#EAB308', borderRadius: 2 },
+                        { label: 'Demosi', data: [], backgroundColor: '#EF4444', borderRadius: 2 },
+                        { label: 'Penyesuaian', data: [], backgroundColor: '#3B82F6', borderRadius: 2 },
+                        { label: 'OJT', data: [], backgroundColor: '#10B981', borderRadius: 2 },
+                        { label: 'Non Job', data: [], backgroundColor: '#64748B', borderRadius: 2 }
                     ]
                 },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: false, 
+                    plugins: { 
+                        legend: { 
+                            display: true, 
+                            position: 'bottom',
+                            labels: { boxWidth: 8, font: { size: 9 } }
+                        } 
+                    },
+                    scales: {
+                        x: { stacked: true },
+                        y: { stacked: true }
+                    }
+                }
+            });
+
+            // Inisialisasi Chart BNSP Baru (8 Area)
+            const ctxBNSP = document.getElementById('chartBNSP').getContext('2d');
+            myChartBNSP = new Chart(ctxBNSP, {
+                type: 'bar',
+                data: {
+                    labels: ['NTB', 'NTT', 'Sumatera', 'Kaltim', 'Sulsel', 'Jatim', 'Bali', 'DKI'],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: ['#0F3C7E', '#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#cbd5e1', '#94a3b8'],
+                        borderRadius: 3
+                    }]
+                },
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
         });
 
@@ -882,19 +960,6 @@
                 ]
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-        });
-
-        new Chart(document.getElementById('chartBNSP').getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Jawa', 'Sumatera', 'Kalimantan', 'Sulawesi', 'Bali', 'NTB/NTT'],
-                datasets: [{
-                    data: [168, 120, 76, 68, 48, 32],
-                    backgroundColor: ['#0F3C7E', '#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE'],
-                    borderRadius: 3
-                }]
-            },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
         });
     </script>
 </body>
