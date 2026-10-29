@@ -386,7 +386,7 @@
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                     <div class="flex items-center gap-2">
                         <i class="fas fa-graduation-cap text-brand-blue bg-blue-50 p-1.5 rounded"></i>
-                        <h3 class="font-bold text-slate-800">Mutasi & Promosi</h3>
+                        <h3 class="font-bold text-slate-800">Movement</h3>
                     </div>
                     <select id="filter-tahun-mutasi" class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none cursor-pointer">
                         <option value="2026">2026</option>
@@ -397,7 +397,7 @@
                     </select>
                 </div>
                 
-                <div class="grid grid-cols-3 gap-2 mb-2">
+                <div class="grid grid-cols-2 gap-2 mb-2">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Mutasi</p>
                         <span id="val-mutasi" class="text-xl font-extrabold text-brand-cyan">0</span>
@@ -406,27 +406,19 @@
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Promosi</p>
                         <span id="val-promosi" class="text-xl font-extrabold text-brand-yellow">0</span>
                     </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 mb-5">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Demosi</p>
                         <span id="val-demosi" class="text-xl font-extrabold text-red-500">0</span>
                     </div>
-                </div>
-                <div class="grid grid-cols-3 gap-2 mb-5">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penyesuaian<br>Jabatan</p>
-                        <span id="val-penyesuaian" class="text-xl font-extrabold text-brand-lightblue">0</span>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Penempatan<br>OJT</p>
-                        <span id="val-ojt" class="text-xl font-extrabold text-emerald-500">0</span>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Non<br>Job</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Non Job</p>
                         <span id="val-nonjob" class="text-xl font-extrabold text-slate-600">0</span>
                     </div>
                 </div>
                 
-                <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Tren Mutasi & Promosi</h4>
+                <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Tren Movement</h4>
                 <div class="h-36 w-full relative">
                     <canvas id="chartMutasi"></canvas>
                 </div>
@@ -687,8 +679,6 @@
                 document.getElementById('val-mutasi').innerText = 0;
                 document.getElementById('val-promosi').innerText = 0;
                 document.getElementById('val-demosi').innerText = 0;
-                document.getElementById('val-penyesuaian').innerText = 0;
-                document.getElementById('val-ojt').innerText = 0;
                 document.getElementById('val-nonjob').innerText = 0;
                 updateChartMutasi([], [], [], [], [], []);
                 return;
@@ -698,16 +688,12 @@
             document.getElementById('val-mutasi').innerText = Number(dataTahun.mutasi.total).toLocaleString('id-ID');
             document.getElementById('val-promosi').innerText = Number(dataTahun.promosi.total).toLocaleString('id-ID');
             document.getElementById('val-demosi').innerText = Number(dataTahun.demosi.total).toLocaleString('id-ID');
-            document.getElementById('val-penyesuaian').innerText = Number(dataTahun.penyesuaian.total).toLocaleString('id-ID');
-            document.getElementById('val-ojt').innerText = Number(dataTahun.ojt.total).toLocaleString('id-ID');
             document.getElementById('val-nonjob').innerText = Number(dataTahun.nonjob.total).toLocaleString('id-ID');
 
             updateChartMutasi(
                 dataTahun.mutasi.tren, 
                 dataTahun.promosi.tren,
                 dataTahun.demosi.tren,
-                dataTahun.penyesuaian.tren,
-                dataTahun.ojt.tren,
                 dataTahun.nonjob.tren
             );
         }
@@ -717,9 +703,7 @@
                 myChartMutasiTrend.data.datasets[0].data = tMutasi;
                 myChartMutasiTrend.data.datasets[1].data = tPromosi;
                 myChartMutasiTrend.data.datasets[2].data = tDemosi;
-                myChartMutasiTrend.data.datasets[3].data = tPenyesuaian;
-                myChartMutasiTrend.data.datasets[4].data = tOjt;
-                myChartMutasiTrend.data.datasets[5].data = tNonjob;
+                myChartMutasiTrend.data.datasets[3].data = tNonjob;
                 myChartMutasiTrend.update();
             }
         }
@@ -769,8 +753,6 @@
                         { label: 'Mutasi', data: [], backgroundColor: '#06B6D4', borderRadius: 2 },
                         { label: 'Promosi', data: [], backgroundColor: '#EAB308', borderRadius: 2 },
                         { label: 'Demosi', data: [], backgroundColor: '#EF4444', borderRadius: 2 },
-                        { label: 'Penyesuaian', data: [], backgroundColor: '#3B82F6', borderRadius: 2 },
-                        { label: 'OJT', data: [], backgroundColor: '#10B981', borderRadius: 2 },
                         { label: 'Non Job', data: [], backgroundColor: '#64748B', borderRadius: 2 }
                     ]
                 },
