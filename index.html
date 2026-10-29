@@ -98,20 +98,11 @@
                         <option value="Sulawesi">Sulawesi</option>
                     </select>
                 </div>
-                <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
-                    <span class="text-xs text-slate-500 mr-2 font-medium">Jenis Outlet</span>
-                    <i class="fas fa-store text-brand-blue mr-2 text-sm"></i>
-                    <select class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
-                        <option>Semua Jenis</option>
-                        <option>Kantor Cabang</option>
-                        <option>Kantor Cabang Pembantu</option>
-                    </select>
-                </div>
             </div>
         </header>
 
         <!-- 2. KPI Cards (Top Row) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             
             <!-- Card 1 -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
@@ -170,20 +161,6 @@
                         <span id="karyawan-keluar-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
                     <p class="text-[10px] text-slate-400 mt-1">Sept 2026</p>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden">
-                <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-slate-100 to-transparent"></div>
-                <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 text-2xl mr-4 flex-shrink-0">
-                    <i class="fas fa-users-cog"></i>
-                </div>
-                <div class="relative z-10 w-full">
-                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Manpower GAP</h3>
-                    <div class="flex items-end justify-between">
-                        <span id="manpower-gap-val" class="text-3xl font-extrabold text-slate-800 leading-none">-35</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -487,7 +464,7 @@
                 </div>
                 
                 <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Sebaran Penaksir BNSP</h4>
-                <div class="h-36 w-full relative">
+                <div class="flex-1 w-full relative min-h-[200px] mt-2">
                     <canvas id="chartBNSP"></canvas>
                 </div>
             </div>
