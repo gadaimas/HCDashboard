@@ -716,7 +716,6 @@
                 document.getElementById('total-outlet-val').innerText = Number(globalDashboardData.totalOutlet).toLocaleString('id-ID');
                 document.getElementById('karyawan-baru-val').innerText = Number(globalDashboardData.karyawanBaru).toLocaleString('id-ID');
                 document.getElementById('karyawan-keluar-val').innerText = Number(globalDashboardData.karyawanKeluar).toLocaleString('id-ID');
-                document.getElementById('manpower-gap-val').innerText = globalDashboardData.manpowerGap || "-35";
             } else {
                 const mapData = globalDashboardData.mapData[areaSelected];
                 if (mapData) {
@@ -724,7 +723,6 @@
                     document.getElementById('total-outlet-val').innerText = Number(mapData.outlet).toLocaleString('id-ID');
                     document.getElementById('karyawan-baru-val').innerText = Number(mapData.karyawanBaru || 0).toLocaleString('id-ID');
                     document.getElementById('karyawan-keluar-val').innerText = Number(mapData.karyawanKeluar || 0).toLocaleString('id-ID');
-                    document.getElementById('manpower-gap-val').innerText = mapData.gap || "0";
                 }
             }
         }
