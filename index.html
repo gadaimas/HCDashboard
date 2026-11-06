@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -35,16 +37,22 @@
         }
     </script>
     <style>
-        body { background-color: #F0F4F8; }
-        
+        body {
+            background-color: #F0F4F8;
+        }
+
         .map-point {
             position: absolute;
             transform: translate(-50%, -50%);
             transition: transform 0.2s ease-in-out;
             cursor: pointer;
         }
-        .map-point:hover { transform: translate(-50%, -50%) scale(1.05); z-index: 20; }
-        
+
+        .map-point:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            z-index: 20;
+        }
+
         .donut-center {
             position: absolute;
             top: 50%;
@@ -53,40 +61,61 @@
             text-align: center;
             pointer-events: none;
         }
-        
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        .tab-btn { transition: all 0.3s ease; }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
+
 <body class="text-slate-800 antialiased font-sans">
 
     <!-- Container Utama -->
     <div class="w-full max-w-[1600px] mx-auto px-4 py-6 space-y-6">
-        
+
         <!-- Badge Mode Demo -->
         <div class="flex justify-center lg:justify-start mb-2 animate-pulse">
-            <div class="inline-flex items-center gap-2 bg-[#DC3545] hover:bg-red-700 transition-colors text-white px-5 py-2 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wide shadow-md">
+            <div
+                class="inline-flex items-center gap-2 bg-[#DC3545] hover:bg-red-700 transition-colors text-white px-5 py-2 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wide shadow-md">
                 <i class="fas fa-exclamation-triangle text-white"></i>
                 <span>Mode Demo — Data Simulasi</span>
             </div>
         </div>
 
         <!-- 1. Header -->
-        <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+        <header
+            class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
             <div>
                 <h1 class="text-3xl font-extrabold text-brand-blue tracking-tight">HC Dashboard</h1>
-                <p class="text-slate-500 text-sm mt-1">People Data for Better Business <span class="mx-2">|</span> <span class="font-semibold text-slate-700">Gadai MAS Nusantara</span></p>
+                <p class="text-slate-500 text-sm mt-1">People Data for Better Business <span class="mx-2">|</span> <span
+                        class="font-semibold text-slate-700">Gadai MAS Nusantara</span></p>
             </div>
-            
+
             <div class="flex flex-wrap items-center gap-3">
-                <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
+                <div
+                    class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 shadow-sm hover:border-brand-lightblue transition-colors">
                     <span class="text-xs text-slate-500 mr-2 font-medium">Area</span>
                     <i class="fas fa-map-marker-alt text-brand-blue mr-2 text-sm"></i>
-                    <select id="filter-area" class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
+                    <select id="filter-area"
+                        class="bg-transparent text-sm font-semibold text-slate-700 outline-none cursor-pointer">
                         <option value="Semua Area">Semua Area</option>
                         <option value="Sumatera">Sumatera</option>
                         <option value="DKI">DKI</option>
@@ -103,62 +132,74 @@
 
         <!-- 2. KPI Cards (Top Row) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            
+
             <!-- Card 1 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
                 <div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-blue-50 to-transparent"></div>
-                <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-brand-blue text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                    class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-brand-blue text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="relative z-10">
                     <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Total Karyawan</h3>
                     <div class="flex items-end gap-2">
-                        <span id="total-karyawan-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
+                        <span id="total-karyawan-val"
+                            class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
                     <p class="text-[10px] text-slate-400 mt-1">Sept 2026</p>
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
                 <div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-orange-50 to-transparent"></div>
-                <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                    class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <i class="fas fa-store-alt"></i>
                 </div>
                 <div class="relative z-10">
                     <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Total Outlet</h3>
                     <div class="flex items-end gap-2">
-                        <span id="total-outlet-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
+                        <span id="total-outlet-val"
+                            class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
                     <p class="text-[10px] text-slate-400 mt-1">Sept 2026</p>
                 </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
                 <div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-cyan-50 to-transparent"></div>
-                <div class="w-14 h-14 rounded-full bg-cyan-100 flex items-center justify-center text-brand-cyan text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                    class="w-14 h-14 rounded-full bg-cyan-100 flex items-center justify-center text-brand-cyan text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <i class="fas fa-user-plus"></i>
                 </div>
                 <div class="relative z-10">
                     <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Karyawan Baru</h3>
                     <div class="flex items-end gap-2">
-                        <span id="karyawan-baru-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
+                        <span id="karyawan-baru-val"
+                            class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
                     <p class="text-[10px] text-slate-400 mt-1">Sept 2026</p>
                 </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex items-center relative overflow-hidden group">
                 <div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-red-50 to-transparent"></div>
-                <div class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-red-500 text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                    class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-red-500 text-2xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <i class="fas fa-user-minus"></i>
                 </div>
                 <div class="relative z-10">
                     <h3 class="text-slate-500 text-xs font-bold uppercase tracking-wide mb-1">Karyawan Keluar</h3>
                     <div class="flex items-end gap-2">
-                        <span id="karyawan-keluar-val" class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
+                        <span id="karyawan-keluar-val"
+                            class="text-3xl font-extrabold text-slate-800 leading-none">...</span>
                     </div>
                     <p class="text-[10px] text-slate-400 mt-1">Sept 2026</p>
                 </div>
@@ -167,13 +208,15 @@
 
         <!-- 3. Middle Section (Peta Dinamis 8 Area & Komposisi Karyawan) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
+
             <!-- Map Area (Left - 8/12) -->
-            <div class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col min-h-[600px]">
-                
+            <div
+                class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col min-h-[600px]">
+
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center shadow-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center shadow-md">
                             <i class="fas fa-map-marker-alt text-2xl"></i>
                         </div>
                         <div>
@@ -185,92 +228,145 @@
 
                 <!-- Container Peta -->
                 <div class="flex-1 relative bg-[#F4F7FA] rounded-2xl border border-slate-100 overflow-hidden">
-                    <div class="absolute right-6 top-6 flex flex-col bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden z-20">
-                        <button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-50"><i class="fas fa-plus text-xs"></i></button>
+                    <div
+                        class="absolute right-6 top-6 flex flex-col bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden z-20">
+                        <button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-50"><i
+                                class="fas fa-plus text-xs"></i></button>
                         <div class="h-px bg-slate-100 w-full"></div>
-                        <button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-50"><i class="fas fa-minus text-xs"></i></button>
+                        <button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-50"><i
+                                class="fas fa-minus text-xs"></i></button>
                     </div>
 
-                    <div class="relative w-full h-full min-h-[500px] z-10" style="background-image: url('Peta3-.png'); background-size: 135%; background-position: right -100px center; background-repeat: no-repeat;">
-                        
+                    <div class="relative w-full h-full min-h-[500px] z-10"
+                        style="background-image: url('Peta3-.png'); background-size: 135%; background-position: right -100px center; background-repeat: no-repeat;">
+
                         <div class="absolute" style="top: 12%; left: 8.5%; transform: translateX(-50%);">
-                            <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-35 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-35 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Sumatera</h5>
-                                <p id="map-sumatera-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-sumatera-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-sumatera-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#EA580C]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#EA580C]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 51.5%; left: 26.5%; transform: translateX(-50%);">
-                            <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">DKI & Head Office</h5>
-                                <p id="map-dki-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-dki-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-dki-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#0F3C7E]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#0F3C7E]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 56.5%; left: 34%; transform: translateX(-50%);">
-                            <div class="bg-transparentshadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-transparentshadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Jawa Timur</h5>
-                                <p id="map-jatim-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-jatim-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-jatim-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#2563EB]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#2563EB]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 62%; left: 43%; transform: translateX(-50%);">
-                            <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Bali</h5>
-                                <p id="map-bali-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-bali-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-bali-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#3B82F6]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#3B82F6]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 68%; left: 52%; transform: translateX(-50%);">
-                            <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTB</h5>
-                                <p id="map-ntb-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-ntb-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-ntb-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#60A5FA]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#60A5FA]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 67%; left: 61.5%; transform: translateX(-50%);">
-                            <div class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-transparent shadow-md rounded-xl p-2 border border-slate-100 w-28 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">NTT</h5>
-                                <p id="map-ntt-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-ntt-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-ntt-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#93C5FD]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#93C5FD]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 22.5%; left: 41.5%; transform: translateX(-50%);">
-                            <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Kalimantan</h5>
-                                <p id="map-kalimantan-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
-                                <p id="map-kalimantan-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <p id="map-kalimantan-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
+                                <p id="map-kalimantan-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet
+                                </p>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#1E40AF]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#1E40AF]"></div>
+                            </div>
                         </div>
 
                         <div class="absolute" style="top: 46%; left: 51.5%; transform: translateX(-50%);">
-                            <div class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
+                            <div
+                                class="bg-white shadow-md rounded-xl p-2 border border-slate-100 w-32 text-center relative z-10 transition-transform hover:-translate-y-1 cursor-pointer">
                                 <h5 class="text-[9px] font-bold text-slate-500 mb-0.5">Sulawesi</h5>
-                                <p id="map-sulawesi-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">... Karyawan</p>
+                                <p id="map-sulawesi-karyawan" class="text-xs font-extrabold text-[#0F3C7E] mb-0.5">...
+                                    Karyawan</p>
                                 <p id="map-sulawesi-outlet" class="text-[10px] font-bold text-[#EA580C]">... Outlet</p>
-                                <div class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100"></div>
+                                <div
+                                    class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-slate-100">
+                                </div>
                             </div>
-                            <div class="mt-2 flex justify-center"><div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#06B6D4]"></div></div>
+                            <div class="mt-2 flex justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full border border-white shadow-md bg-[#06B6D4]"></div>
+                            </div>
                         </div>
 
                     </div>
@@ -279,7 +375,7 @@
 
             <!-- Charts Area Right (4/12) -->
             <div class="lg:col-span-4 flex flex-col gap-6">
-                
+
                 <!-- Komposisi Karyawan -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex-1 flex flex-col">
                     <div class="flex items-center gap-3 mb-4">
@@ -288,22 +384,30 @@
                         </div>
                         <h3 class="font-bold text-slate-800 text-lg">Komposisi Karyawan</h3>
                     </div>
-                    
-                    <div class="flex bg-slate-100 rounded-lg p-1 mb-6 text-xs font-semibold w-full border border-slate-200 cursor-pointer">
-                        <button id="tab-level" class="tab-btn bg-brand-blue text-white py-1.5 px-2 flex-1 rounded shadow-sm text-center">Berdasarkan Level</button>
-                        <button id="tab-gender" class="tab-btn text-slate-600 py-1.5 px-2 flex-1 rounded text-center hover:bg-slate-200">Jenis Kelamin</button>
-                        <button id="tab-area" class="tab-btn text-slate-600 py-1.5 px-2 flex-1 rounded text-center hover:bg-slate-200 hidden sm:block">Area</button>
+
+                    <div
+                        class="flex bg-slate-100 rounded-lg p-1 mb-6 text-xs font-semibold w-full border border-slate-200 cursor-pointer">
+                        <button id="tab-level"
+                            class="tab-btn bg-brand-blue text-white py-1.5 px-2 flex-1 rounded shadow-sm text-center">Berdasarkan
+                            Level</button>
+                        <button id="tab-gender"
+                            class="tab-btn text-slate-600 py-1.5 px-2 flex-1 rounded text-center hover:bg-slate-200">Jenis
+                            Kelamin</button>
+                        <button id="tab-area"
+                            class="tab-btn text-slate-600 py-1.5 px-2 flex-1 rounded text-center hover:bg-slate-200 hidden sm:block">Area</button>
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center justify-between gap-6 flex-1">
                         <div class="relative w-44 h-44 flex-shrink-0">
                             <canvas id="chartKomposisi"></canvas>
                             <div class="donut-center">
-                                <span id="komposisi-total-val" class="block text-2xl font-extrabold text-brand-blue">...</span>
-                                <span class="block text-[11px] font-bold text-slate-500 uppercase tracking-wide">Karyawan</span>
+                                <span id="komposisi-total-val"
+                                    class="block text-2xl font-extrabold text-brand-blue">...</span>
+                                <span
+                                    class="block text-[11px] font-bold text-slate-500 uppercase tracking-wide">Karyawan</span>
                             </div>
                         </div>
-                        
+
                         <div class="flex-1 w-full">
                             <ul id="legend-komposisi" class="space-y-3 text-xs overflow-y-auto max-h-44 pr-2"></ul>
                         </div>
@@ -323,11 +427,13 @@
                         <div class="relative w-44 h-44 flex-shrink-0">
                             <canvas id="chartStatus"></canvas>
                             <div class="donut-center">
-                                <span id="status-total-val" class="block text-2xl font-extrabold text-brand-blue">...</span>
-                                <span class="block text-[11px] font-bold text-slate-500 uppercase tracking-wide">Karyawan</span>
+                                <span id="status-total-val"
+                                    class="block text-2xl font-extrabold text-brand-blue">...</span>
+                                <span
+                                    class="block text-[11px] font-bold text-slate-500 uppercase tracking-wide">Karyawan</span>
                             </div>
                         </div>
-                        
+
                         <div class="flex-1 w-full">
                             <ul id="legend-status" class="space-y-4 text-xs overflow-y-auto max-h-44 pr-2"></ul>
                         </div>
@@ -339,7 +445,7 @@
 
         <!-- 4. Bottom Section (4 Columns) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
+
             <!-- Rekrutmen -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-full">
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
@@ -347,34 +453,46 @@
                         <i class="fas fa-user-tie text-brand-blue bg-blue-50 p-1.5 rounded"></i>
                         <h3 class="font-bold text-slate-800">Rekrutmen</h3>
                     </div>
-                    <select class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
+                    <select
+                        class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
                         <option>2026</option>
                     </select>
                 </div>
-                
+
                 <div class="grid grid-cols-5 gap-1.5 mb-5">
-                    <div class="bg-[#1a1c4b] rounded-lg p-1.5 text-center flex flex-col justify-between border border-[#1a1c4b]/50 shadow-sm">
-                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Total<br>Request</p>
+                    <div
+                        class="bg-[#1a1c4b] rounded-lg p-1.5 text-center flex flex-col justify-between border border-[#1a1c4b]/50 shadow-sm">
+                        <p
+                            class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">
+                            Total<br>Request</p>
                         <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-total">549</p>
                     </div>
                     <div class="bg-[#0e5c9a] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
-                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Req<br>HO</p>
+                        <p
+                            class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">
+                            Req<br>HO</p>
                         <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-req-ho">58</p>
                     </div>
                     <div class="bg-[#0e5c9a] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
-                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Variant<br>HO</p>
+                        <p
+                            class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">
+                            Variant<br>HO</p>
                         <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-var-ho">40</p>
                     </div>
                     <div class="bg-[#f0a616] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
-                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Req<br>Area</p>
+                        <p
+                            class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">
+                            Req<br>Area</p>
                         <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-req-area">472</p>
                     </div>
                     <div class="bg-[#f0a616] rounded-lg p-1.5 text-center flex flex-col justify-between shadow-sm">
-                        <p class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">Variant<br>Area</p>
+                        <p
+                            class="text-[7px] md:text-[8px] font-bold text-white/90 uppercase mb-0.5 leading-tight tracking-tighter">
+                            Variant<br>Area</p>
                         <p class="text-sm md:text-lg font-extrabold text-white" id="rekrutmen-var-area">17</p>
                     </div>
                 </div>
-                
+
                 <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Tren Rekrutmen</h4>
                 <div class="h-36 w-full relative">
                     <canvas id="chartRekrutmen"></canvas>
@@ -388,7 +506,8 @@
                         <i class="fas fa-graduation-cap text-brand-blue bg-blue-50 p-1.5 rounded"></i>
                         <h3 class="font-bold text-slate-800">Movement</h3>
                     </div>
-                    <select id="filter-tahun-mutasi" class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none cursor-pointer">
+                    <select id="filter-tahun-mutasi"
+                        class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none cursor-pointer">
                         <option value="2026">2026</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
@@ -396,28 +515,33 @@
                         <option value="2022">2022</option>
                     </select>
                 </div>
-                
+
                 <div class="grid grid-cols-2 gap-2 mb-2">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Mutasi</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Mutasi
+                        </p>
                         <span id="val-mutasi" class="text-xl font-extrabold text-brand-cyan">0</span>
                     </div>
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Promosi</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">
+                            Promosi</p>
                         <span id="val-promosi" class="text-xl font-extrabold text-brand-yellow">0</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-2 mb-5">
                     <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Demosi</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Demosi
+                        </p>
                         <span id="val-demosi" class="text-xl font-extrabold text-red-500">0</span>
                     </div>
-                    <div class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Non Job</p>
+                    <div
+                        class="bg-slate-50 border border-slate-100 rounded-lg p-2 text-center shadow-sm flex flex-col justify-center items-center">
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">Non
+                            Job</p>
                         <span id="val-nonjob" class="text-xl font-extrabold text-slate-600">0</span>
                     </div>
                 </div>
-                
+
                 <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Tren Movement</h4>
                 <div class="h-36 w-full relative">
                     <canvas id="chartMutasi"></canvas>
@@ -431,30 +555,35 @@
                         <i class="fas fa-award text-brand-blue bg-blue-50 p-1.5 rounded"></i>
                         <h3 class="font-bold text-slate-800">Penaksir BNSP</h3>
                     </div>
-                    <select class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
+                    <select
+                        class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
                         <option>2026</option>
                     </select>
                 </div>
-                
+
                 <div class="grid grid-cols-4 gap-2 mb-5">
                     <div class="text-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">BNSP<br>Aktif</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">
+                            BNSP<br>Aktif</p>
                         <p class="text-xl font-extrabold text-emerald-600" id="val-bnsp-aktif">0</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">BNSP<br>Tidak Aktif</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">
+                            BNSP<br>Tidak Aktif</p>
                         <p class="text-xl font-extrabold text-brand-orange" id="val-bnsp-tidak-aktif">0</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Belum<br>BNSP</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">
+                            Belum<br>BNSP</p>
                         <p class="text-xl font-extrabold text-red-500" id="val-bnsp-belum">0</p>
                     </div>
                     <div class="text-center border-l border-slate-100">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">Total<br>&nbsp;</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1 leading-tight tracking-tighter">
+                            Total<br>&nbsp;</p>
                         <p class="text-xl font-extrabold text-slate-800" id="val-bnsp-total">0</p>
                     </div>
                 </div>
-                
+
                 <h4 class="text-xs font-bold text-slate-700 mb-2 mt-auto">Sebaran Penaksir BNSP</h4>
                 <div class="flex-1 w-full relative min-h-[200px] mt-2">
                     <canvas id="chartBNSP"></canvas>
@@ -468,78 +597,135 @@
                         <i class="fas fa-clipboard-list text-brand-blue bg-blue-50 p-1.5 rounded"></i>
                         <h3 class="font-bold text-slate-800">PJP, TDP, GMDP</h3>
                     </div>
-                    <select class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
+                    <select
+                        class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-700 outline-none">
                         <option>2026</option>
                     </select>
                 </div>
-                
+
                 <div class="space-y-6 mt-2">
+
+                    <!-- 1. PJP (Sudah Terhubung dengan Script & 4 Status) -->
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center flex-shrink-0 shadow-md">
                             <i class="fas fa-file-alt text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <div class="flex justify-between items-end mb-1.5">
                                 <div class="flex items-baseline gap-2">
                                     <span class="font-bold text-slate-700 text-sm">PJP</span>
-                                    <span class="text-2xl font-extrabold text-slate-800 leading-none">380</span>
+                                    <!-- ID untuk Angka Utama -->
+                                    <span id="val-pjp-main"
+                                        class="text-2xl font-extrabold text-slate-800 leading-none">0</span>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wide">Outlet Aktif</span>
+                                    <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wide">PJP
+                                        Definitif</span>
                                 </div>
                             </div>
+                            <!-- Progress Bar 4 Status (Kosong di awal, diisi JS) -->
                             <div class="flex h-2.5 rounded-full overflow-hidden w-full bg-slate-100 shadow-inner">
-                                <div style="width: 85%" class="bg-brand-lightblue"></div>
-                                <div style="width: 10%" class="bg-brand-yellow"></div>
-                                <div style="width: 5%" class="bg-red-500"></div>
+                                <div id="bar-pjp-definitif" style="width: 0%"
+                                    class="bg-blue-500 transition-all duration-500"></div>
+                                <div id="bar-pjp-belum-definitif" style="width: 0%"
+                                    class="bg-yellow-400 transition-all duration-500"></div>
+                                <div id="bar-pjp-demosi" style="width: 0%"
+                                    class="bg-orange-500 transition-all duration-500"></div>
+                                <div id="bar-pjp-resign" style="width: 0%"
+                                    class="bg-red-500 transition-all duration-500"></div>
                             </div>
                         </div>
-                        <div class="w-16 flex-shrink-0 text-[10px] space-y-1.5 font-semibold">
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-lightblue"></span>Aktif</span><span class="text-slate-800">380</span></div>
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-yellow"></span>Proses</span><span class="text-slate-800">24</span></div>
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span>Expired</span><span class="text-slate-800">8</span></div>
+                        <!-- Legend 4 Status (Lebar dilebarkan sedikit jadi w-24 agar teks muat) -->
+                        <div class="w-24 flex-shrink-0 text-[9px] space-y-1.5 font-semibold">
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-blue-500"></span>Definitif</span><span
+                                    id="val-pjp-definitif" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-yellow-400"></span>Blm Definitif</span><span
+                                    id="val-pjp-belum-definitif" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-orange-500"></span>Demosi</span><span
+                                    id="val-pjp-demosi" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-red-500"></span>Resign</span><span
+                                    id="val-pjp-resign" class="text-slate-800">0</span></div>
                         </div>
                     </div>
 
+                    <!-- 2. TDP (Terhubung Script & 6 Status) -->
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-xl bg-brand-lightblue text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-lightblue text-white flex items-center justify-center flex-shrink-0 shadow-md">
                             <i class="fas fa-file-signature text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <div class="flex justify-between items-end mb-1.5">
                                 <div class="flex items-baseline gap-2">
                                     <span class="font-bold text-slate-700 text-sm">TDP</span>
-                                    <span class="text-2xl font-extrabold text-slate-800 leading-none">370</span>
+                                    <span id="val-tdp-main"
+                                        class="text-2xl font-extrabold text-slate-800 leading-none">0</span>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wide">Outlet Aktif</span>
+                                    <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wide">TOTAL
+                                        PIPELINE</span>
                                 </div>
                             </div>
+                            <!-- Progress Bar 6 Status -->
                             <div class="flex h-2.5 rounded-full overflow-hidden w-full bg-slate-100 shadow-inner">
-                                <div style="width: 80%" class="bg-brand-lightblue"></div>
-                                <div style="width: 12%" class="bg-brand-yellow"></div>
-                                <div style="width: 8%" class="bg-red-500"></div>
+                                <div id="bar-tdp-sudah-promosi" style="width: 0%"
+                                    class="bg-emerald-500 transition-all duration-500"></div>
+                                <div id="bar-tdp-talent-pool" style="width: 0%"
+                                    class="bg-blue-500 transition-all duration-500"></div>
+                                <div id="bar-tdp-lulus" style="width: 0%"
+                                    class="bg-indigo-500 transition-all duration-500"></div>
+                                <div id="bar-tdp-proses" style="width: 0%"
+                                    class="bg-yellow-400 transition-all duration-500"></div>
+                                <div id="bar-tdp-tidak-lulus" style="width: 0%"
+                                    class="bg-red-500 transition-all duration-500"></div>
+                                <div id="bar-tdp-mundur" style="width: 0%"
+                                    class="bg-slate-400 transition-all duration-500"></div>
                             </div>
                         </div>
-                        <div class="w-16 flex-shrink-0 text-[10px] space-y-1.5 font-semibold">
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-lightblue"></span>Aktif</span><span class="text-slate-800">370</span></div>
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-yellow"></span>Proses</span><span class="text-slate-800">30</span></div>
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span>Expired</span><span class="text-slate-800">12</span></div>
+                        <!-- Legend 6 Status (Disesuaikan agar muat) -->
+                        <div
+                            class="w-28 flex-shrink-0 text-[9px] space-y-1 font-semibold max-h-20 overflow-y-auto pr-1">
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-emerald-500"></span>Sdh Promosi</span><span
+                                    id="val-tdp-sudah-promosi" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-blue-500"></span>Talent Pool</span><span
+                                    id="val-tdp-talent-pool" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-indigo-500"></span>Lulus</span><span
+                                    id="val-tdp-lulus" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-yellow-400"></span>Proses</span><span
+                                    id="val-tdp-proses" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-red-500"></span>Tdk Lulus</span><span
+                                    id="val-tdp-tidak-lulus" class="text-slate-800">0</span></div>
+                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-slate-400"></span>Mundur</span><span
+                                    id="val-tdp-mundur" class="text-slate-800">0</span></div>
                         </div>
                     </div>
 
+                    <!-- 3. GMDP (Asli, Belum Diubah) -->
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
                             <i class="fas fa-address-card text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <div class="flex justify-between items-end mb-1.5">
                                 <div class="flex items-baseline gap-2">
                                     <span class="font-bold text-slate-700 text-sm">GMDP</span>
-                                    <span class="text-2xl font-extrabold text-slate-800 leading-none">355</span>
+                                    <span class="text-2xl font-extrabold text-slate-800 leading-none">0</span>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wide">Outlet Aktif</span>
+                                    <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wide">Outlet
+                                        Aktif</span>
                                 </div>
                             </div>
                             <div class="flex h-2.5 rounded-full overflow-hidden w-full bg-slate-100 shadow-inner">
@@ -549,9 +735,15 @@
                             </div>
                         </div>
                         <div class="w-16 flex-shrink-0 text-[10px] space-y-1.5 font-semibold">
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-lightblue"></span>Aktif</span><span class="text-slate-800">355</span></div>
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-yellow"></span>Proses</span><span class="text-slate-800">42</span></div>
-                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span>Expired</span><span class="text-slate-800">15</span></div>
+                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-brand-lightblue"></span>Aktif</span><span
+                                    class="text-slate-800">355</span></div>
+                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-brand-yellow"></span>Proses</span><span
+                                    class="text-slate-800">42</span></div>
+                            <div class="flex justify-between"><span class="flex items-center gap-1.5"><span
+                                        class="w-2 h-2 rounded-full bg-red-500"></span>Expired</span><span
+                                    class="text-slate-800">15</span></div>
                         </div>
                     </div>
                 </div>
@@ -565,16 +757,18 @@
         const APPS_SCRIPT_URL_UTAMA = "https://script.google.com/macros/s/AKfycbySr_PRyDcm6HpRMZL5h9-a7nhlg8h5BZe9lI4vZ5NRWFj0Ths9qbwFW0hL2G576J8/exec";
         const APPS_SCRIPT_URL_MUTASI = "https://script.google.com/macros/s/AKfycbym0MLyz9kRgRDACBzKcUkaNDDA5gzW0RaTE_7eL5Fte4AbGRCaJ88h5nt6hymENu2Q/exec";
         const APPS_SCRIPT_URL_BNSP = "https://script.google.com/macros/s/AKfycbzn56TQkaCNKP7axw1iY6PSBfYOEpybkAF6GHurxRT47GY6Nw43d6bWH9C2GJhMg5ZJ/exec";
+        const APPS_SCRIPT_URL_PJP = "https://script.google.com/macros/s/AKfycbwuktT77__9zjsBn5m9zU9Ay138vGrlwJQxbS1vdsuI779alGGQQbU7wADK2jptybMC/exec";
+        const APPS_SCRIPT_URL_TDP = "https://script.google.com/macros/s/AKfycbznA1QTH6IEMYfjyRKBkj2d5MYwj5BG9U3wlJswp8hsPGmv49gtLRPpUgiXiYIEYnc/exec";
 
         let globalDashboardData = null;
-        let globalMutasiData = null; 
+        let globalMutasiData = null;
         let globalBNSPData = null;
-        
+
         let komposisiData = {};
         let myChartKomposisi;
-        let myChartStatus; 
-        let myChartMutasiTrend; 
-        let myChartBNSP; 
+        let myChartStatus;
+        let myChartMutasiTrend;
+        let myChartBNSP;
 
         const chartColors = ['#2563EB', '#0F3C7E', '#06B6D4', '#EAB308', '#EA580C', '#10B981', '#8B5CF6', '#F43F5E', '#64748B'];
 
@@ -584,7 +778,7 @@
                 if (APPS_SCRIPT_URL_MUTASI.startsWith("http")) {
                     const responseMutasi = await fetch(APPS_SCRIPT_URL_MUTASI);
                     globalMutasiData = await responseMutasi.json();
-                    
+
                     const thnTerpilih = document.getElementById("filter-tahun-mutasi").value;
                     updateDataMutasiEPM(thnTerpilih);
                 }
@@ -607,7 +801,7 @@
             try {
                 const responseUtama = await fetch(APPS_SCRIPT_URL_UTAMA);
                 const data = await responseUtama.json();
-                
+
                 if (data) {
                     globalDashboardData = data;
                     updateKPICards("Semua Area");
@@ -652,17 +846,111 @@
             }
         }
 
+        // 2. Fungsi penarik data
+        async function fetchPJPData() {
+            try {
+                const response = await fetch(APPS_SCRIPT_URL_PJP);
+                const data = await response.json();
+
+                if (data.PJP) {
+                    const definitif = data.PJP.definitif;
+                    const belum_definitif = data.PJP.belum_definitif;
+                    const demosi = data.PJP.demosi;
+                    const resign = data.PJP.resign;
+                    const total = definitif + belum_definitif + demosi + resign;
+
+                    // Update Text Angka
+                    document.getElementById('val-pjp-main').innerText = total;
+                    document.getElementById('val-pjp-definitif').innerText = definitif;
+                    document.getElementById('val-pjp-belum-definitif').innerText = belum_definitif;
+                    document.getElementById('val-pjp-demosi').innerText = demosi;
+                    document.getElementById('val-pjp-resign').innerText = resign;
+
+                    // Update Lebar Progress Bar
+                    if (total > 0) {
+                        document.getElementById('bar-pjp-definitif').style.width = `${(definitif / total) * 100}%`;
+                        document.getElementById('bar-pjp-belum-definitif').style.width = `${(belum_definitif / total) * 100}%`;
+                        document.getElementById('bar-pjp-demosi').style.width = `${(demosi / total) * 100}%`;
+                        document.getElementById('bar-pjp-resign').style.width = `${(resign / total) * 100}%`;
+                    } else {
+                        document.getElementById('bar-pjp-definitif').style.width = '0%';
+                        document.getElementById('bar-pjp-belum-definitif').style.width = '0%';
+                        document.getElementById('bar-pjp-demosi').style.width = '0%';
+                        document.getElementById('bar-pjp-resign').style.width = '0%';
+                    }
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data PJP:", error);
+            }
+        }
+
+        // 3. Pastikan fungsi dipanggil saat halaman dimuat
+        // Jika Anda sudah memiliki document.addEventListener('DOMContentLoaded', ...) di file Anda,
+        // cukup tambahkan fetchPJPData(); di dalamnya. Jika belum, gunakan kode di bawah:
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchPJPData();
+        });
+
+        async function fetchTDPData() {
+            try {
+                const response = await fetch(APPS_SCRIPT_URL_TDP);
+                const data = await response.json();
+
+                if (data.TDP) {
+                    const promosi = data.TDP.sudah_promosi;
+                    const talent = data.TDP.talent_pool;
+                    const lulus = data.TDP.lulus;
+                    const tidakLulus = data.TDP.tidak_lulus;
+                    const mundur = data.TDP.mundur;
+                    const proses = data.TDP.proses;
+
+                    const total = promosi + talent + lulus + tidakLulus + mundur + proses;
+
+                    // Update Text Angka
+                    document.getElementById('val-tdp-main').innerText = total;
+                    document.getElementById('val-tdp-sudah-promosi').innerText = promosi;
+                    document.getElementById('val-tdp-talent-pool').innerText = talent;
+                    document.getElementById('val-tdp-lulus').innerText = lulus;
+                    document.getElementById('val-tdp-proses').innerText = proses;
+                    document.getElementById('val-tdp-tidak-lulus').innerText = tidakLulus;
+                    document.getElementById('val-tdp-mundur').innerText = mundur;
+
+                    // Update Lebar Progress Bar
+                    if (total > 0) {
+                        document.getElementById('bar-tdp-sudah-promosi').style.width = `${(promosi / total) * 100}%`;
+                        document.getElementById('bar-tdp-talent-pool').style.width = `${(talent / total) * 100}%`;
+                        document.getElementById('bar-tdp-lulus').style.width = `${(lulus / total) * 100}%`;
+                        document.getElementById('bar-tdp-proses').style.width = `${(proses / total) * 100}%`;
+                        document.getElementById('bar-tdp-tidak-lulus').style.width = `${(tidakLulus / total) * 100}%`;
+                        document.getElementById('bar-tdp-mundur').style.width = `${(mundur / total) * 100}%`;
+                    } else {
+                        ['sudah-promosi', 'talent-pool', 'lulus', 'proses', 'tidak-lulus', 'mundur'].forEach(id => {
+                            document.getElementById(`bar-tdp-${id}`).style.width = '0%';
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data TDP:", error);
+            }
+        }
+
+        // Tambahkan pemanggilan ini ke dalam DOMContentLoaded yang sudah ada
+        document.addEventListener("DOMContentLoaded", () => {
+            // fetchPJPData(); // (Fungsi PJP Anda yang sudah ada)
+            fetchTDPData();
+        });
+
         // FUNGSI UPDATE DATA BNSP
         function updateDataBNSP(data) {
             if (!data || !data.summary) return;
-            
+
             document.getElementById('val-bnsp-aktif').innerText = Number(data.summary.aktif).toLocaleString('id-ID');
             document.getElementById('val-bnsp-tidak-aktif').innerText = Number(data.summary.tidakAktif).toLocaleString('id-ID');
             document.getElementById('val-bnsp-belum').innerText = Number(data.summary.belum).toLocaleString('id-ID');
             document.getElementById('val-bnsp-total').innerText = Number(data.summary.total).toLocaleString('id-ID');
 
             if (myChartBNSP) {
-                const labels = myChartBNSP.data.labels; 
+                const labels = myChartBNSP.data.labels;
                 const chartData = labels.map(area => {
                     return data.areas[area] ? data.areas[area].total : 0;
                 });
@@ -688,7 +976,7 @@
             document.getElementById('val-nonjob').innerText = Number(dataTahun.nonjob.total).toLocaleString('id-ID');
 
             updateChartMutasi(
-                dataTahun.mutasi.tren, 
+                dataTahun.mutasi.tren,
                 dataTahun.promosi.tren,
                 dataTahun.demosi.tren,
                 dataTahun.nonjob.tren
@@ -727,18 +1015,18 @@
         document.addEventListener('DOMContentLoaded', () => {
             fetchDashboardData();
 
-            document.getElementById('filter-area').addEventListener('change', function(e) {
+            document.getElementById('filter-area').addEventListener('change', function (e) {
                 updateKPICards(e.target.value);
             });
 
-            document.getElementById('filter-tahun-mutasi').addEventListener('change', function(e) {
+            document.getElementById('filter-tahun-mutasi').addEventListener('change', function (e) {
                 updateDataMutasiEPM(e.target.value);
             });
 
             document.getElementById('tab-level').addEventListener('click', () => renderKomposisi('level'));
             document.getElementById('tab-gender').addEventListener('click', () => renderKomposisi('gender'));
             document.getElementById('tab-area').addEventListener('click', () => renderKomposisi('area'));
-            
+
             const ctxMutasi = document.getElementById('chartMutasi').getContext('2d');
             myChartMutasiTrend = new Chart(ctxMutasi, {
                 type: 'bar',
@@ -751,15 +1039,15 @@
                         { label: 'Non Job', data: [], backgroundColor: '#64748B', borderRadius: 2 }
                     ]
                 },
-                options: { 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { 
-                        legend: { 
-                            display: true, 
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
                             position: 'bottom',
                             labels: { boxWidth: 8, font: { size: 9 } }
-                        } 
+                        }
                     },
                     scales: {
                         x: { stacked: true },
@@ -792,7 +1080,7 @@
 
             const baseActive = "tab-btn bg-brand-blue text-white py-1.5 px-2 flex-1 rounded shadow-sm text-center";
             const baseInactive = "tab-btn text-slate-600 py-1.5 px-2 flex-1 rounded text-center hover:bg-slate-200";
-            
+
             document.getElementById('tab-level').className = type === 'level' ? baseActive : baseInactive;
             document.getElementById('tab-gender').className = type === 'gender' ? baseActive : baseInactive;
             document.getElementById('tab-area').className = type === 'area' ? baseActive + " hidden sm:block" : baseInactive + " hidden sm:block";
@@ -801,7 +1089,7 @@
             const labels = [];
             const values = [];
             let totalData = 0;
-            
+
             Object.entries(dataObj).forEach(([labelKey, val]) => {
                 labels.push(labelKey);
                 values.push(val);
@@ -809,9 +1097,9 @@
             });
 
             const dynamicColors = labels.map((label, index) => {
-                if (label === "Perempuan") return "#EC4899"; 
-                if (label === "Laki-laki") return "#3B82F6"; 
-                return chartColors[index % chartColors.length]; 
+                if (label === "Perempuan") return "#EC4899";
+                if (label === "Laki-laki") return "#3B82F6";
+                return chartColors[index % chartColors.length];
             });
 
             if (myChartKomposisi) {
@@ -835,10 +1123,10 @@
             let legendHTML = '';
             labels.forEach((label, index) => {
                 const count = values[index];
-                if(count > 0) {
+                if (count > 0) {
                     const percentage = totalData > 0 ? ((count / totalData) * 100).toFixed(1).replace('.', ',') : 0;
-                    const color = dynamicColors[index]; 
-                    
+                    const color = dynamicColors[index];
+
                     legendHTML += `
                         <li class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
@@ -859,7 +1147,7 @@
         function renderStatusKaryawan(dataObj) {
             const labels = ["Permanen", "Kontrak", "Magang", "Percobaan"];
             const values = labels.map(label => dataObj[label] || 0);
-            const bgColors = ['#10B981', '#3B82F6', '#F59E0B', '#8B5CF6']; 
+            const bgColors = ['#10B981', '#3B82F6', '#F59E0B', '#8B5CF6'];
             let totalData = values.reduce((a, b) => a + b, 0);
 
             if (myChartStatus) {
@@ -883,10 +1171,10 @@
             let legendHTML = '';
             labels.forEach((label, index) => {
                 const count = values[index];
-                if(count > 0) {
+                if (count > 0) {
                     const percentage = totalData > 0 ? ((count / totalData) * 100).toFixed(1).replace('.', ',') : 0;
                     const color = bgColors[index];
-                    
+
                     legendHTML += `
                         <li class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
@@ -917,4 +1205,5 @@
         });
     </script>
 </body>
+
 </html>
